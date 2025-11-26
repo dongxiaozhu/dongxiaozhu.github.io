@@ -262,4 +262,13 @@
 .is-builder .nav-dropdown.collapsing {
   transition: none !important; }
 
-/*# sourceMappingURL=style.css.map */
+/* Fix for iPhone Menu Freeze */
+.nav-trigger {
+  cursor: pointer;
+}
+
+label[for="nav-trigger"] {
+  cursor: pointer; 
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
