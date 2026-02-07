@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=HzzZD4"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=HzzZD4" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=tELR9n"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=tELR9n" type="text/css">
 
   
   
@@ -86,8 +86,31 @@
             </div>
             <div class="col-12 col-lg">
                 <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>LLM Unlearning</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">Existing unlearning methods typically suppress all tokens in the forget set, causing over-forgetting and degrading model utility. The proposed Targeted Information Forgetting (TIF) framework overcomes this limitation by distinguishing unwanted words (UW) from general words (GW) and selectively unlearning only the unwanted content. TIF integrates a targeted identifier with a new optimization strategy, using Logit Preference Loss to forget UW and Preservation Loss to retain GW.&nbsp;<br>Zhou, X,&nbsp; and <strong>Zhu, D</strong>. (2025) <a href="https://arxiv.org/pdf/2506.03142" class="text-primary">Not All Tokens Are Meant to Be Forgotten</a>. In the proceedings of 40th  AAAI Conference on Artificial Intelligence (<strong>AAAI-25</strong>).&nbsp;<br></p>
+                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Precise Forgetting</strong></h3>
+                    <p class="mbr-text mbr-fonts-style display-7">Existing unlearning methods typically suppress all tokens in the forget set, causing over-forgetting, under-forgetting, and degrading model utility. The proposed Targeted Information Forgetting (TIF) framework overcomes this limitation by distinguishing unwanted words from general words and selectively unlearning only the unwanted content. TIF integrates a targeted identifier with a new optimization strategy, using Logit Preference Loss to forget unwanted words and Preservation Loss to retain general words.&nbsp;<br>Zhou, X., Qiang, Y., Zade, S.Z., Zytko, D., Khanduri, P. and <strong>Zhu, D</strong>.&nbsp;<a href="https://arxiv.org/pdf/2506.03142" class="text-primary">Not All Tokens Are Meant to Be Forgotten</a>. In the proceedings of 40th  AAAI Conference on Artificial Intelligence (<strong>AAAI-26 Oral</strong>).&nbsp;<br></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="image1 cid-vaxPkzfKV6" id="image1-2c">
+    
+
+    
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6">
+                <div class="image-wrapper">
+                    <a href="assets/files/Idea_Figure_UnLearning.pdf"><img src="assets/images/download-760x405.png" alt="Mobirise"></a>
+                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Attention Smoothing for Unlearning</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg">
+                <div class="text-wrapper">
+                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Attention Smoothing Unlearning</strong></h3>
+                    <p class="mbr-text mbr-fonts-style display-7">LLM unlearning algorithms often trade forget efficacy for language coherence, leading to gibberish outputs. We propose a new method called Attention Smoothing Unlearning (ASU) that helps the model “forget” unwanted factual information in a controlled way. By increasing the softmax temperature, ASU flattens attention distributions and directly suppresses the lexical-level and semantic-level associations responsible for reconstructing memorized knowledge yet maintains coherence in responses.&nbsp;<br>Zade, S.Z., Zhou, X, Liu, S and <strong>Zhu, D.</strong> 2026. Attention Smoothing Is All You Need For Unlearning. (<strong>ICLR-2026</strong>)&nbsp;<br></p>
                 </div>
             </div>
         </div>
@@ -118,13 +141,13 @@
             <div class="col-12 col-lg-6">
                 <div class="image-wrapper">
                     <a href="assets/files/Idea_Figure_UnLearning.pdf"><img src="assets/images/spatial-reasoning-1256x550.png" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Grounded Vision–Language Conversation (WalkGPT)</p>
+                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Grounded Vision–Language Conversation&nbsp;</p>
                 </div>
             </div>
             <div class="col-12 col-lg">
                 <div class="text-wrapper">
                     <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Spatial Reasoning LVLM&nbsp;</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">Ensuring accessible pedestrian navigation requires models that can jointly reason about semantic and spatial aspects of complex scenes, a capability missing in existing LVLMs. We introduce WalkGPT, a pixel-grounded LVLM that unifies language reasoning and segmentation to provide depth-aware accessibility guidance. We also present PAVE, a 41k-image benchmark with accessibility-aware and depth-grounded annotations, and demonstrate that WalkGPT delivers strong grounded reasoning and segmentation performance.<br><br>Sultan, R, Zhu, H, Li, Khanduri, P, Brocanelli, M, and <strong>Zhu, D</strong>. (2025) <a href="https://openreview.net/attachment?id=VYjXSyUAtC&name=paper_submission" class="text-primary">WalkGPT: Grounded Vision–Language Conversation with Depth-Aware Segmentation for Pedestrian Navigation</a>. Under Review.&nbsp;<br></p>
+                    <p class="mbr-text mbr-fonts-style display-7">Ensuring accessible pedestrian navigation requires models that can jointly reason about semantic and spatial aspects of complex scenes, a capability missing in existing LVLMs. We introduce a pixel-grounded LVLM that unifies language reasoning and segmentation to provide depth-aware accessibility guidance. We also present PAVE, a 41k-image benchmark with accessibility-aware and depth-grounded annotations, and demonstrate that it delivers strong grounded reasoning and segmentation performance.<br>Rafi Ibn Sultan, Zhu, H, Li, C, Khanduri, P, Brocanelli, M and <strong>Zhu D</strong> "WalkGPT: Grounded Vision–Language Conversation with Depth-Aware Segmentation for Pedestrian Navigation", Under Review.&nbsp;<br><br></p>
                 </div>
             </div>
         </div>
