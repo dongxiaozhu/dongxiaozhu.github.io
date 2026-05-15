@@ -1,188 +1,404 @@
 <!DOCTYPE html>
-<html  >
+<html lang="en">
 <head>
-  <!-- Site made with Mobirise Website Builder v6.0.6, https://mobirise.com -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v6.0.6, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
-  <meta name="description" content="">
-  
-  
-  <title>Teaching</title>
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=KErwif"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=KErwif" type="text/css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teaching — Dongxiao Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2140; --navy-mid: #1e3a5f; --navy-light: #e8edf4;
+    --gold: #c8932a; --gold-light: #fdf3e0;
+    --slate: #4a5568; --muted: #718096; --border: #e2e6ec;
+    --bg: #f8f9fb; --white: #ffffff; --text: #1a202c; --accent: #2563eb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'IBM Plex Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
-  
-  
-  
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white); border-bottom: 1px solid var(--border);
+    padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px;
+  }
+  .nav-brand { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+  .nav-links { display: flex; }
+  .nav-links a {
+    text-decoration: none; font-size: 0.82rem; font-weight: 500; color: var(--slate);
+    letter-spacing: 0.04em; text-transform: uppercase; padding: 0 1.1rem; height: 56px;
+    display: flex; align-items: center; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--navy); border-bottom-color: var(--gold); }
+
+  .page-header {
+    background: var(--white); border-bottom: 1px solid var(--border); padding: 2.5rem 2rem 2rem;
+  }
+  .page-header-inner { max-width: 960px; margin: 0 auto; }
+  .page-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .page-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--navy); font-weight: 600; }
+  .page-intro { font-size: 0.88rem; color: var(--slate); margin-top: 0.7rem; max-width: 680px; line-height: 1.75; }
+  .page-intro a { color: var(--accent); text-decoration: none; }
+
+  .main { max-width: 960px; margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 1fr 340px; gap: 3rem; align-items: start; }
+
+  /* LEFT COLUMN */
+  .section { margin-bottom: 2.5rem; }
+  .section-title {
+    font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--navy); font-weight: 600;
+    margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+
+  /* PROSPECTIVE BOX */
+  .prospective-box {
+    background: var(--navy); color: rgba(255,255,255,0.85);
+    border-radius: 4px; padding: 1.5rem 1.6rem; margin-bottom: 2.5rem;
+  }
+  .prospective-box h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #fff; margin-bottom: 0.6rem; }
+  .prospective-box p { font-size: 0.84rem; line-height: 1.75; }
+  .prospective-box a { color: #90b8e8; }
+  .rank-note {
+    margin-top: 0.8rem; font-size: 0.78rem;
+    padding: 0.5rem 0.8rem; background: rgba(255,255,255,0.08);
+    border-radius: 3px; border-left: 3px solid var(--gold);
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* STUDENT TABLES */
+  .student-section { margin-bottom: 2rem; }
+  .student-section-label {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 0.7rem;
+  }
+  .student-list { display: flex; flex-direction: column; gap: 0; }
+  .student-item {
+    padding: 0.65rem 0; border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+  }
+  .student-item:last-child { border-bottom: none; }
+  .student-name { font-size: 0.87rem; font-weight: 500; color: var(--text); }
+  .student-name a { color: var(--accent); text-decoration: none; }
+  .student-name a:hover { text-decoration: underline; }
+  .student-degree {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
+    color: var(--muted); white-space: nowrap;
+  }
+  .student-placement {
+    font-size: 0.78rem; color: var(--slate); text-align: right; line-height: 1.4;
+  }
+  .student-placement a { color: var(--accent); text-decoration: none; }
+  .placement-tag {
+    display: inline-block; font-size: 0.65rem; font-weight: 600;
+    padding: 0.1rem 0.35rem; border-radius: 2px; margin-right: 0.3rem;
+    background: var(--gold-light); color: #7a5500; border: 1px solid #e8c97a;
+  }
+
+  /* COURSES */
+  .course-list { display: flex; flex-direction: column; gap: 0; }
+  .course-item {
+    padding: 0.7rem 0; border-bottom: 1px solid var(--border);
+    display: grid; grid-template-columns: 110px 1fr; gap: 0.8rem; align-items: baseline;
+  }
+  .course-item:last-child { border-bottom: none; }
+  .course-code {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;
+    color: var(--navy-mid); font-weight: 600;
+  }
+  .course-name { font-size: 0.85rem; color: var(--text); font-weight: 500; line-height: 1.4; }
+  .course-name a { color: var(--accent); text-decoration: none; }
+  .course-name a:hover { text-decoration: underline; }
+  .course-terms { font-size: 0.75rem; color: var(--muted); margin-top: 0.15rem; }
+
+  /* RIGHT SIDEBAR */
+  .sidebar { position: sticky; top: 76px; }
+  .sidebar-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 4px;
+    padding: 1.2rem 1.3rem; margin-bottom: 1.2rem;
+  }
+  .sidebar-title { font-size: 0.75rem; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem; }
+  .sidebar-item { padding: 0.4rem 0; border-bottom: 1px solid var(--border); font-size: 0.82rem; color: var(--slate); display: flex; justify-content: space-between; align-items: center; }
+  .sidebar-item:last-child { border-bottom: none; }
+  .sidebar-item a { color: var(--accent); text-decoration: none; font-weight: 500; }
+
+  footer {
+    background: var(--navy); color: rgba(255,255,255,0.55);
+    text-align: center; padding: 2rem; font-size: 0.78rem; margin-top: 2rem;
+  }
+  footer a { color: rgba(255,255,255,0.75); text-decoration: none; }
+  footer a:hover { color: #fff; }
+  .foot-nav { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.8rem; }
+
+  @media (max-width: 700px) {
+    .main { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .course-item { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
-  
-  <section data-bs-version="5.1" class="menu menu1 cid-sDmoM1B40a" once="menu" id="menu1-a">
-    
 
-    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
-        <div class="container">
-            <div class="navbar-brand">
-                
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="index.html">Dongxiao Zhu</a></span>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#header11-6">Home</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="research.html">Research</a></li>
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="publications.html">Publication</a></li>
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="teaching.html">Teaching</a>
-                    </li></ul>
-                
-                
-            </div>
-        </div>
-    </nav>
-</section>
+<nav>
+  <a class="nav-brand" href="index.html">Dongxiao Zhu</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html" class="active">Teaching</a>
+  </div>
+</nav>
 
-<section data-bs-version="5.1" class="content14 cid-tbtHuKXUL7" id="content14-1q">
-    
-    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-12">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-5"><strong><br></strong><strong>To the perspective students</strong>:<br></h3>
-                <ul class="list mbr-fonts-style display-4"><p>I always look for working with and financially support <strong>highly motivated, hard working,</strong> and <strong>well qualified students</strong> who have a genuine interest in <strong>Trustworthy AI</strong> Research and Applications. Interested candidates are encouraged to contact me by email, together with resume and transcripts.</p><p>According to <a href="https://csrankings.org/#/index?ai&vision&mlmining&nlp&inforet&us" class="text-primary">CSRankings.org</a>, Wayne State University AI Related Programs (AI, Computer Vision, Machine Learning, Natural Language Processing, The Web &amp; information retrieval)&nbsp;<strong>Ranked 84th Nationally</strong> (2015-2025).</p></ul>
-            </div>
-        </div>
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">Trustworthy AI Lab</div>
+    <h1 class="page-title">Teaching &amp; Students</h1>
+    <p class="page-intro">
+      I always look for working with and financially supporting highly motivated, hard-working, and well-qualified students who have a genuine interest in Trustworthy AI research and applications.
+    </p>
+  </div>
+</div>
+
+<div class="main">
+  <div class="left-col">
+
+    <!-- PROSPECTIVE -->
+    <div class="prospective-box">
+      <h3>Prospective Students</h3>
+      <p>Interested candidates are encouraged to contact me by email with a resume and transcripts. Strong background in mathematics and programming is desirable. I financially support qualifying PhD students with research assistantships.</p>
+      <div class="rank-note">
+        Wayne State University AI-related programs (AI, Computer Vision, ML, NLP, Information Retrieval) are ranked <strong style="color:#fff">84th nationally</strong> by CSRankings.org (2015–2025).
+      </div>
     </div>
-</section>
 
-<section data-bs-version="5.1" class="content14 cid-sEob2GmQrM" id="content14-11">
-    
-    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-12">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-5"><strong>Current Research Students in Trustworthy AI Lab:</strong></h3>
-                <ul class="list mbr-fonts-style display-4">
-                    <li><a href="https://www.linkedin.com/in/ujunwa-mgboh-420495198/" class="text-primary" style="font-size: 1.2rem;">Ujunwa Mgboh</a><span style="font-size: 1.2rem;"> (CS Ph.D. candidate)</span><br></li><li><a href="https://www.linkedin.com/in/rafi-ibn-sultan/" class="text-primary">Rafi Ibn Sultan</a> (CS Ph.D. candidate)</li><li><a href="https://sites.google.com/view/mlpa/mainpage/members" class="text-primary" style="font-size: 1.2rem;">Xiangyu Zhou</a><span style="font-size: 1.2rem;"> (CS Ph.D. candidate)</span><br></li><li><a href="https://sites.google.com/view/mlpa/mainpage/members" class="text-primary">Mohammad Amin Roshani</a> (CS Ph.D. candidate)&nbsp;</li><li><a href="https://sites.google.com/view/mlpa/mainpage" class="text-primary">Hui Zhu</a> (CS Ph.D. candidate)</li><li><a href="https://sites.google.com/view/mlpa/mainpage" class="text-primary">Saleh Zare Zade</a> (CS Ph.D. candidate)</li><li><a href="https://www.linkedin.com/in/yiannos-demetriou-75068b1b6/" class="text-primary">Yiannos Demetrious</a> (M.D./Ph.D. candidate)</li><li><a href="https://www.linkedin.com/in/md-sajid-alam-chowdhury/?originalSubdomain=bd" class="text-primary">Md. Sajid Alam Chowdhury</a> (CS Ph.D. pre-candidate)&nbsp;</li><li>
-</li><li>Hao Liu (CS Ph.D. pre-candidate)
-</li><li><a href="https://www.linkedin.com/in/harrison-lavins/" class="text-primary" style="font-size: 1.2rem;">Harrison Lavins</a><span style="font-size: 1.2rem;"> (CS Master thesis student)</span></li>
-                </ul>
+    <!-- CURRENT STUDENTS -->
+    <section class="section">
+      <h2 class="section-title">Research Students</h2>
+
+      <div class="student-section">
+        <div class="student-section-label">Current — Trustworthy AI Lab</div>
+        <div class="student-list">
+          <div class="student-item">
+            <div>
+              <div class="student-name">Ujunwa Mgboh</div>
             </div>
+            <span class="student-degree">CS Ph.D. Candidate</span>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Rafi Ibn Sultan</div></div>
+            <span class="student-degree">CS Ph.D. Candidate</span>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Xiangyu Zhou</div></div>
+            <span class="student-degree">CS Ph.D. Candidate</span>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Mohammad Amin Roshani</div></div>
+            <span class="student-degree">CS Ph.D. Candidate</span>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Hui Zhu</div></div>
+            <span class="student-degree">CS Ph.D. Candidate</span>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Saleh Zare Zade</div></div>
+            <span class="student-degree">CS Ph.D. Candidate</span>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Yiannos Demetrious</div></div>
+            <span class="student-degree">M.D./Ph.D. Candidate</span>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Md. Sajid Alam Chowdhury</div></div>
+            <span class="student-degree">CS Ph.D. Pre-candidate</span>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Hao Liu</div></div>
+            <span class="student-degree">CS Ph.D. Pre-candidate</span>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Harrison Lavins</div></div>
+            <span class="student-degree">M.S. Thesis</span>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
 
-<section data-bs-version="5.1" class="content14 cid-sMNTE1E8g2" id="content14-1i">
-    
-    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-12">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-5"><strong>Former Research Students:</strong></h3>
-                <ul class="list mbr-fonts-style display-4">
-                    <li>Supriya TS. Kumar (M.S. 2025) Data Scientist @ General Motor 
-</li><li>Qiang Yao (Ph.D. 2024) Assistant Professor (Tenure-Track) @ Oakland University 
-</li><li>Chengyin Li (Ph.D. 2024), Research Scientist @ Henry Ford Health</li><li>Xin Li (Ph.D. 2022) Research Scientist II @ <a href="https://www.bosch-ai.com/" class="text-primary" target="_blank">Bosch AI</a>&nbsp; <a href="assets/files/PhD_dissertation_Final.pdf" class="text-primary">PhD Dissertation</a>&nbsp;</li><li><span style="font-size: 1.2rem;">Deng Pan (Ph.D. 2022) Algorithm Engineer @ </span><a href="https://www.alibabagroup.com/en/global/home" class="text-primary" style="font-size: 1.2rem; background-color: rgb(255, 255, 255);">Alibaba Group</a><span style="font-size: 1.2rem;">&nbsp; &nbsp;</span><a href="assets/files/PanDdissertation.pdf" class="text-primary" style="font-size: 1.2rem; background-color: rgb(255, 255, 255);">PhD Dissertation</a><span style="font-size: 1.2rem;">&nbsp;</span><br></li><li><span style="font-size: 1.2rem;">Xiangrui Li (Ph.D. 2020) Senior Algorithm Engineer @ <a href="https://www.bytedance.com/" class="text-primary">ByteDance</a>&nbsp;&nbsp;<a href="assets/files/LiXiangDissertation.pdf" class="text-primary">PhD Dissertation</a></span><br></li><li>Xue (Victor) Zhang (M.S. 2020) Senior Data Engineer @ <a href="https://www.quickenloans.com/" class="text-primary">Quicken Loan</a>
-</li><li>Milad Z. Nezhad (Ph.D. 2020)&nbsp; Lead Data Scientist @ <a href="https://www.ford.com/" class="text-primary">Ford Motor Company</a></li><li>Najibe Sadati (M.S., 2020)&nbsp; Data Scientist @ <a href="https://www.ford.com/" class="text-primary">Ford Motor Company</a></li><li>Lu Wang (Ph.D. 2019) Assistant Professor (Tenure-Track) @ <a href="https://uh.edu/" class="text-primary">University&nbsp;of Houston</a></li><li>Jingwei Zhang (M.S. 2017) Senior Software Engineer @ <a href="https://www.genzeon.com/" class="text-primary">Genzeon Corporation</a></li><li>Narjes S. Movahedi (Ph.D. 2015) Senior Software Engineer @ <a href="https://www.mathworks.com/" class="text-primary">MathWorks</a>
-</li><li>Thair Judeh (Ph.D. 2014) Senior Bioinformatics Engineer @ <a href="https://www.progenity.com/" class="text-primary">Progenity</a>
-</li><li>Nan Deng (Ph.D. 2014) Senior Scientist @ <a href="https://www.roche.com/" class="text-primary">Roche</a>
-</li><li>Kristen Johnson (M.S. 2012) Assistant Professor @ <a href="https://www.cse.msu.edu/" class="text-primary">Computer Science and Engineering Department</a>, Michigan State University
-</li><li>Lipi R. Acharya (Ph.D. 2011) Senior Machine Learning Engineer @ <a href="https://www.boozallen.com/" class="text-primary">Booz Allen Hamilton</a>
-</li><li>Guorong Xu (M.S. 2011) Software Engineer @ UCSD
-</li><li>Patrick Trahan (M.S. 2009) Computer Service @ Ochsner Health System
-</li><li>Sichu Li (M.S. 2009) Technical Staff @ MITRE Corporation</li>
-                </ul>
+      <div class="student-section" style="margin-top:1.5rem">
+        <div class="student-section-label">Alumni &amp; Placements</div>
+        <div class="student-list">
+          <div class="student-item">
+            <div><div class="student-name">Supriya TS. Kumar</div></div>
+            <div class="student-placement"><span class="student-degree" style="margin-right:0.5rem">M.S. 2025</span>Data Scientist @ General Motors</div>
+          </div>
+          <div class="student-item">
+            <div>
+              <div class="student-name">Qiang Yao</div>
+              <div style="font-size:0.74rem;color:var(--muted);margin-top:0.1rem"><a href="assets/files/TAI_Yao.pdf">Designing for Reliability: Trustworthy AI</a></div>
             </div>
+            <div class="student-placement">
+              <span class="student-degree" style="margin-right:0.5rem">Ph.D. 2024</span>
+              <span class="placement-tag">Faculty</span>Asst. Professor @ Oakland University
+            </div>
+          </div>
+          <div class="student-item">
+            <div>
+              <div class="student-name"><a href="https://chengyinlee.github.io/">Chengyin Li</a></div>
+              <div style="font-size:0.74rem;color:var(--muted);margin-top:0.1rem"><a href="assets/files/ViT_Li.pdf">Transformer Architectures for Medical Image Segmentation</a></div>
+            </div>
+            <div class="student-placement">
+              <span class="student-degree" style="margin-right:0.5rem">Ph.D. 2024</span>
+              Research Scientist @ Henry Ford Health
+            </div>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Xin Li</div></div>
+            <div class="student-placement"><span class="student-degree" style="margin-right:0.5rem">Ph.D. 2022</span>Research Scientist II @ Bosch AI</div>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Deng Pan</div></div>
+            <div class="student-placement"><span class="student-degree" style="margin-right:0.5rem">Ph.D. 2022</span>Algorithm Engineer @ Alibaba Group</div>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Xiangrui Li</div></div>
+            <div class="student-placement"><span class="student-degree" style="margin-right:0.5rem">Ph.D. 2020</span>Senior Algorithm Engineer @ ByteDance</div>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Milad Z. Nezhad</div></div>
+            <div class="student-placement"><span class="student-degree" style="margin-right:0.5rem">Ph.D. 2020</span>Lead Data Scientist @ Ford Motor Company</div>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Lu Wang</div></div>
+            <div class="student-placement">
+              <span class="student-degree" style="margin-right:0.5rem">Ph.D. 2019</span>
+              <span class="placement-tag">Faculty</span>Asst. Professor @ U of Houston
+            </div>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Narjes S. Movahedi</div></div>
+            <div class="student-placement"><span class="student-degree" style="margin-right:0.5rem">Ph.D. 2015</span>Senior Software Engineer @ MathWorks</div>
+          </div>
+          <div class="student-item">
+            <div><div class="student-name">Kristen Johnson</div></div>
+            <div class="student-placement">
+              <span class="student-degree" style="margin-right:0.5rem">M.S. 2012</span>
+              <span class="placement-tag">Faculty</span>Asst. Professor @ Michigan State University
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section data-bs-version="5.1" class="content14 cid-sEd8axccBP" id="content14-r">
-    
-    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-12">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-5"><strong>Classroom Teaching&nbsp;</strong></h3>
-                <ul class="list mbr-fonts-style display-4">
-                    <li>CSC 5991 Trustworthy AI for LLMs and LVLMs, Winter 2026</li><li>CSC 8990 Seminar in Computer Science, Fall 2025, Winter 2026</li><li>CSC 8800 Seminar in Machine Learning and Artificial Intelligence. Winter 2021, 2022, 2023, 2024</li><li>CSC 8860 Seminar Topics in Computer Vision and Pattern Recognition. Fall 2017
-</li><li>CSC 7825 Machine Learning. Fall 2014, 2015, 2016, Winter 2019, 2020, 2021, 2022</li><li>CSC 6580 Design and Analysis of Algorithms. Winter 2015, 2016, 2017
-</li><li>CSC 5825 Intro. to Machine Learning and Applications. Winter 2017, Fall 2017, 2018, 2019, 2020, 2021, 2022, 2023</li><li>CSC 5991 Special Topics in Comp. Sci. Fall 2012, Fall 2013, Winter 2014, 2015, 2016, 2026</li><li>CSC 2110 Comp. Sci. I (C++ Programming). Fall 2011, Winter 2012, 2013, 2014&nbsp;</li>
-                </ul>
-            </div>
+    <!-- COURSES -->
+    <section class="section">
+      <h2 class="section-title">Courses Taught</h2>
+      <div class="course-list">
+        <div class="course-item">
+          <span class="course-code">CSC 5991</span>
+          <div>
+            <div class="course-name"><a href="assets/files/CSC-5991PosterWinter2026.pdf">Trustworthy AI for LLMs and Vision-Language Models</a></div>
+            <div class="course-terms">Winter 2026</div>
+          </div>
         </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="content14 cid-sEd8abgmqK" id="content14-q">
-    
-    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-12">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-5"><strong>Synergistic Activities</strong></h3>
-                <ul class="list mbr-fonts-style display-4">
-                    <li>National Science Foundation Panelist, 2009(2), 2011, 2013, 2014 (mail reviewer), 2015, 2017, 2020, 2024 (X3), 2025 (X2).  
-</li><li>National Institute of Health ACE Study Section, 2009-2011, multiple special emphasis panels 2011-2025.
-</li><li>Associate Editor: <a href="http://www.biomedcentral.com/bmcgenomics" class="text-primary"><em>BMC Genomics</em></a>
-</li><li>Associate Editor: <a href="http://www.frontiersin.org/genetics" class="text-primary"><em>Frontiers in Genetics</em></a>
-</li><li>Academic Editor: <em><a href="http://www.plosone.org/" class="text-primary"><i>PLoS ONE</i></a> 
-</em></li><li>Associate Editor (Bioinformatics): <em><a href="http://www.springer.com/life+sciences/journal/11427" class="text-primary">Science China - Life Sciences</a></em></li><li>Associate Editor: <em><a href="https://www.sciencedirect.com/journal/smart-health" class="text-primary">Smart Health Journal</a></em></li><li>Editorial Board Member: <a href="https://www.nature.com/srep/" class="text-primary"><em>Scientific Reports</em></a>
-</li><li>Editorial Board Member: <em><a href="http://www.inderscience.com/jhome.php?jcode=IJCBDD" class="text-primary"><i>International Journal of Computational Biology and Drug Design</i></a>
-</em></li><li>Guest Editor: <em>IEEE/ACM transaction on Computational Biology and Bioinformatics (TCBB); BMC Bioinformatics.
-</em></li><li><span style="font-size: 1.2rem;">Area Chair/Senior Program Committee/Program Committee: NuerIPS, ICML, ICLR, CVPR, ECCV, AAAI, IJCAI, ACL, EMNLP, AMIA, MICCAI</span></li><li><span style="font-size: 1.2rem;">Program/Session/Workshop chair: AdvML@ICML-22/23/24, ACM-BCB'15, ICIBM'14, IEEE-ICMLA'14, ACM-BIOKDD'14, ICIBM'13, ACM-BCB'14, ACM-BCB'13, ACM-BCB'12, IEEE-BIBM'13, IEEE-BIBM'12, ICIBM'12, IEEE-BIBM'11, ENAR’07.</span><br></li><li>Journal reviewer: <em>Bioinformatics, Briefings in Bioinformatics, Nucleic Acids Research, Genome Biology, Genome Medicine, BMC Genomics, BMC Bioinformatics, BMC Systems Biology, Biometrics, Statistics in Medicine, PLoS Genetics, PLoS ONE, Biology Direct, Machine Learning, Pattern Recognition, Neural Computing, IEEE transactions on Fuzzy Systems (TFS), Computational Biology and Bioinformatics (TCBB),  Knowledge and Data Engineering (TKDE), Neural Network and Learning Systems, Image Processing, Sustainable Computing (TSUSC), Computers (TC), Medical Imaging (TMI), Artificial Intelligence (TAI), IEEE Signal Processing Letters, Physics Review.</em></li>
-                </ul>
-            </div>
+        <div class="course-item">
+          <span class="course-code">CSC 8990</span>
+          <div>
+            <div class="course-name">Seminar in Computer Science</div>
+            <div class="course-terms">Fall 2025 · Winter 2026</div>
+          </div>
         </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="footer3 cid-sEd9n64OAA" once="footers" id="footer3-s">
-
-    
-
-    <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(255, 255, 255);"></div>
-
-    <div class="container">
-        <div class="media-container-row align-center mbr-white">
-            <div class="row row-links">
-                <ul class="foot-menu">
-                    
-                    
-                    
-                    
-                    
-                <li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html" class="text-success">Home</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="research.html" class="text-success text-primary">Research</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="publications.html" class="text-success text-primary">Publication</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="teaching.html" class="text-success text-primary">Teaching</a></li></ul>
-            </div>
-            
-            <div class="row row-copirayt">
-                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
-                    © Copyright 2021- 2025 Dongxiao Zhu. All Rights Reserved.
-                </p>
-            </div>
+        <div class="course-item">
+          <span class="course-code">CSC 8800</span>
+          <div>
+            <div class="course-name">Seminar in Machine Learning and Artificial Intelligence</div>
+            <div class="course-terms">Winter 2021 · 2022 · 2023 · 2024</div>
+          </div>
         </div>
+        <div class="course-item">
+          <span class="course-code">CSC 7825</span>
+          <div>
+            <div class="course-name">Machine Learning</div>
+            <div class="course-terms">Fall 2014–2016 · Winter 2019–2022</div>
+          </div>
+        </div>
+        <div class="course-item">
+          <span class="course-code">CSC 5825</span>
+          <div>
+            <div class="course-name">Introduction to Machine Learning and Applications</div>
+            <div class="course-terms">Winter 2017 · 2018 · 2023</div>
+          </div>
+        </div>
+        <div class="course-item">
+          <span class="course-code">CSC 6580</span>
+          <div>
+            <div class="course-name">Design and Analysis of Algorithms</div>
+            <div class="course-terms">Winter 2015 · 2016 · 2017</div>
+          </div>
+        </div>
+        <div class="course-item">
+          <span class="course-code">CSC 8860</span>
+          <div>
+            <div class="course-name">Seminar Topics in Computer Vision and Pattern Recognition</div>
+            <div class="course-terms">Fall 2017</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-title">Programs Founded</div>
+      <div class="sidebar-item" style="flex-direction:column;align-items:flex-start;gap:0.2rem;padding:0.7rem 0">
+        <div style="font-weight:500;font-size:0.84rem;color:var(--navy)"><a href="https://engineering.wayne.edu/artificial-intelligence-program">M.S. in AI (Algorithms &amp; Systems)</a></div>
+        <div style="font-size:0.75rem;color:var(--muted)">Hosted by CS · Ranked #20 nationally</div>
+      </div>
+      <div class="sidebar-item" style="flex-direction:column;align-items:flex-start;gap:0.2rem;padding:0.7rem 0">
+        <div style="font-weight:500;font-size:0.84rem;color:var(--navy)">Online M.S. in CS — AI Concentration</div>
+        <div style="font-size:0.75rem;color:var(--muted)">Launched Jan 2023</div>
+      </div>
     </div>
-</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/2545557" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/no-code-website-builder.html">No Code Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>  
-  
-  
+
+    <div class="sidebar-card">
+      <div class="sidebar-title">Current Students</div>
+      <div class="sidebar-item"><span>Ph.D. Candidates</span><strong>6</strong></div>
+      <div class="sidebar-item"><span>Ph.D. Pre-candidates</span><strong>2</strong></div>
+      <div class="sidebar-item"><span>M.D./Ph.D. Candidate</span><strong>1</strong></div>
+      <div class="sidebar-item"><span>M.S. Thesis</span><strong>1</strong></div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-title">Alumni Placements</div>
+      <div class="sidebar-item"><span style="font-size:0.8rem">Faculty positions</span><strong>3</strong></div>
+      <div class="sidebar-item"><span style="font-size:0.8rem">Industry scientists</span><strong>8+</strong></div>
+      <div class="sidebar-item"><span style="font-size:0.8rem">Ph.D. graduates</span><strong>9</strong></div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-title">Quick Links</div>
+      <div class="sidebar-item">
+        <a href="https://engineering.wayne.edu/artificial-intelligence-program">MS AI Program</a>
+      </div>
+      <div class="sidebar-item">
+        <a href="https://sites.google.com/view/mlpa/mainpage">Trustworthy AI Lab</a>
+      </div>
+      <div class="sidebar-item">
+        <a href="assets/files/CV_DZhu.pdf">Full CV (PDF)</a>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<footer>
+  <div class="foot-nav">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+  </div>
+  <div>© 2021–2026 Dongxiao Zhu · Wayne State University · Detroit, MI</div>
+</footer>
+
 </body>
 </html>

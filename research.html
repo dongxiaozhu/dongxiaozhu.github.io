@@ -1,597 +1,342 @@
 <!DOCTYPE html>
-<html  >
+<html lang="en">
 <head>
-  <!-- Site made with Mobirise Website Builder v6.0.6, https://mobirise.com -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v6.0.6, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
-  <meta name="description" content="">
-  
-  
-  <title>Research</title>
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=GRxs7o"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=GRxs7o" type="text/css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Dongxiao Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2140; --navy-mid: #1e3a5f; --navy-light: #e8edf4;
+    --gold: #c8932a; --gold-light: #fdf3e0;
+    --slate: #4a5568; --muted: #718096; --border: #e2e6ec;
+    --bg: #f8f9fb; --white: #ffffff; --text: #1a202c; --accent: #2563eb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'IBM Plex Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
-  
-  
-  
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white); border-bottom: 1px solid var(--border);
+    padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px;
+  }
+  .nav-brand { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+  .nav-links { display: flex; gap: 0; }
+  .nav-links a {
+    text-decoration: none; font-size: 0.82rem; font-weight: 500; color: var(--slate);
+    letter-spacing: 0.04em; text-transform: uppercase; padding: 0 1.1rem; height: 56px;
+    display: flex; align-items: center; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--navy); border-bottom-color: var(--gold); }
+
+  .page-header {
+    background: var(--white); border-bottom: 1px solid var(--border);
+    padding: 2.5rem 2rem 2rem;
+  }
+  .page-header-inner { max-width: 960px; margin: 0 auto; }
+  .page-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .page-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--navy); font-weight: 600; }
+  .page-intro { font-size: 0.9rem; color: var(--slate); margin-top: 0.8rem; max-width: 700px; line-height: 1.75; }
+  .page-intro a { color: var(--accent); text-decoration: none; }
+
+  .main { max-width: 960px; margin: 0 auto; padding: 3rem 2rem; }
+
+  /* RESEARCH AREA */
+  .area { margin-bottom: 3.5rem; }
+  .area-header {
+    display: flex; align-items: baseline; gap: 1rem;
+    border-left: 4px solid var(--navy-mid);
+    padding-left: 1rem; margin-bottom: 1.5rem;
+  }
+  .area-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem; color: var(--muted);
+    flex-shrink: 0;
+  }
+  .area-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--navy); font-weight: 600; }
+  .area-desc { font-size: 0.88rem; color: var(--slate); line-height: 1.8; margin-bottom: 1.5rem; max-width: 750px; }
+  .area-desc strong { color: var(--text); }
+
+  /* PAPER CARDS */
+  .paper-grid { display: flex; flex-direction: column; gap: 0.8rem; }
+  .paper-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.1rem 1.3rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.8rem;
+    align-items: start;
+  }
+  .paper-venue {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.25rem 0.55rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+  }
+  .venue-top { background: #0f2140; color: #fff; }
+  .venue-mid { background: var(--navy-light); color: var(--navy-mid); border: 1px solid #b8c8da; }
+  .paper-title { font-size: 0.88rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+  .paper-title a { color: inherit; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; color: var(--accent); }
+  .paper-authors { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+  .paper-authors strong { color: var(--slate); }
+  .paper-note { display: inline-block; font-size: 0.7rem; font-weight: 600; color: #7a3500; background: #fef0ea; border: 1px solid #f0c09a; padding: 0.1rem 0.4rem; border-radius: 2px; margin-left: 0.4rem; }
+
+  /* DIVIDER */
+  .area-divider { border: none; border-top: 1px solid var(--border); margin: 0 0 3.5rem; }
+
+  footer {
+    background: var(--navy); color: rgba(255,255,255,0.55);
+    text-align: center; padding: 2rem; font-size: 0.78rem; margin-top: 2rem;
+  }
+  footer a { color: rgba(255,255,255,0.75); text-decoration: none; }
+  footer a:hover { color: #fff; }
+  .foot-nav { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.8rem; }
+</style>
 </head>
 <body>
-  
-  <section data-bs-version="5.1" class="menu menu1 cid-sDmoM1B40a" once="menu" id="menu1-b">
-    
 
-    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
-        <div class="container">
-            <div class="navbar-brand">
-                
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="index.html">Dongxiao Zhu</a></span>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#header11-6">Home</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="research.html">Research</a></li>
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="publications.html">Publication</a></li>
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="teaching.html">Teaching</a>
-                    </li></ul>
-                
-                
-            </div>
-        </div>
-    </nav>
-</section>
+<nav>
+  <a class="nav-brand" href="index.html">Dongxiao Zhu</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="research.html" class="active">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+  </div>
+</nav>
 
-<section data-bs-version="5.1" class="content14 cid-sEd6OGNHu7" id="content14-p">
-    
-    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-12">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-7">My recent research thrusts lie in trustworthy Artificial Intelligence (AI) and AI Safety with human-trust inspired and community driven innovations for social good, such as good health and wellbeing, mobility equity, and, zero hunger. My&nbsp;<strong>foundational AI research</strong> focuses on <strong>explainability</strong>, <strong>adversarial robustness</strong>, and <strong>fairness</strong> of deep neural networks (DNNs), collectively among others referring to trustworthy AI. Recent literature has seen marked performance improvement of AI models on benchmark datasets, nevertheless overlooking trustworthiness when deploying the AI models in safety and security-critical real-world scenarios. Our foundational AI research subsequently motivates&nbsp;<strong>use-inspired AI research</strong> to tackle some of more pressing human-centered and community-driven issues (e.g., transparency, fairness, and disparities in health and mobility) via efficiently leveraging the limited resources to improve accessibility of the socially vulnerable groups, fostering a thriving community. In addition, my research interest also lies in <strong>AI for Science</strong> where I collaborate with researchers from life, physical and social science domains to design tailor-made AI algorithms to solve their real-world research problems.&nbsp; &nbsp;<br><strong><br></strong><span style="font-size: 19.2px;"><strong><br></strong></span><br><span style="font-size: 19.2px;"><strong>Large Language Model (LLM) Unlearning </strong>LLMs unlearning methods fall into two groups: divergence-based and convergence-based. Divergence-based approaches push the model away from its pretrained parameters to undo the influence of the forget set. However, they face a core trade-off: insufficient divergence causes under-forgetting, while excessive divergence causes over-forgetting and harms model utility. Convergence-based methods instead guide the model toward fixed target behaviors, such as responding “I don’t know”, or replace positive samples. While effective in removing specific knowledge, these approaches often make the model overly ignorant, reducing its general capabilities.</span><div>
-</div></h3>
-                <ul class="list mbr-fonts-style display-4"></ul>
-            </div>
-        </div>
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">Trustworthy AI Lab</div>
+    <h1 class="page-title">Research</h1>
+    <p class="page-intro">
+      My research thrusts lie in <strong>Trustworthy AI</strong> and <strong>AI Safety</strong>, with human-trust-inspired and community-driven innovations for social good — spanning good health and wellbeing, mobility equity, and reduced inequalities. Foundational work on explainability, robustness, and fairness motivates use-inspired applications in health, urban, and social computing.
+    </p>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- AREA 1: LLM Unlearning -->
+  <div class="area" id="unlearning">
+    <div class="area-header">
+      <span class="area-num">01</span>
+      <h2 class="area-title">Large Language Model (LLM) Unlearning</h2>
     </div>
-</section>
-
-<section data-bs-version="5.1" class="image1 cid-thvtDTDnCV" id="image1-1y">
-    
-
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <a href="assets/files/Idea_Figure_UnLearning.pdf"><img src="assets/images/idea-figure-unlearning-1256x396.png" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Not All Tokens are Meant to Be Forgotten</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Precise Forgetting</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">Existing unlearning methods typically suppress all tokens in the forget set, causing over-forgetting, under-forgetting, and degrading model utility. The proposed Targeted Information Forgetting (TIF) framework overcomes this limitation by distinguishing unwanted words from general words and selectively unlearning only the unwanted content. TIF integrates a targeted identifier with a new optimization strategy, using Logit Preference Loss to forget unwanted words and Preservation Loss to retain general words.&nbsp;<br>Zhou, X., Qiang, Y., Zade, S.Z., Zytko, D., Khanduri, P. and <strong>Zhu, D</strong>.&nbsp;<a href="https://arxiv.org/pdf/2506.03142" class="text-primary">Not All Tokens Are Meant to Be Forgotten</a>. In the proceedings of 40th  AAAI Conference on Artificial Intelligence (<strong>AAAI-26 Oral</strong>).&nbsp;<br></p>
-                </div>
-            </div>
+    <p class="area-desc">
+      LLM unlearning methods fall into two groups: <strong>divergence-based</strong> approaches, which push models away from pretrained parameters to undo influence of a forget set, and <strong>convergence-based</strong> methods, which guide models toward fixed target behaviors. Both face core trade-offs between under-forgetting, over-forgetting, and preservation of general utility. Our work introduces principled frameworks for <em>precise</em>, targeted forgetting that preserves model coherence.
+    </p>
+    <div class="paper-grid">
+      <div class="paper-card">
+        <span class="paper-venue venue-top">AAAI-26 Oral</span>
+        <div>
+          <div class="paper-title"><a href="#">Not All Tokens Are Meant to Be Forgotten</a> <span class="paper-note">Oral</span></div>
+          <div class="paper-authors">Zhou, X., Qiang, Y., Zade, S.Z., Zytko, D., Khanduri, P. and <strong>Zhu, D.</strong></div>
         </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="image1 cid-vaxPkzfKV6" id="image1-2c">
-    
-
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <img src="assets/images/download-760x405.png" alt="Mobirise">
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Attention Smoothing for Unlearning</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Attention Smoothing Unlearning</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">LLM unlearning algorithms often trade forget efficacy for language coherence, leading to gibberish outputs. We propose a new method called Attention Smoothing Unlearning (ASU) that helps the model “forget” unwanted factual information in a controlled way. By increasing the softmax temperature, ASU flattens attention distributions and directly suppresses the lexical-level and semantic-level associations responsible for reconstructing memorized knowledge yet maintains coherence in responses.&nbsp;<br>Zade, S.Z., Zhou, X, Liu, S and <strong>Zhu, D.</strong> 2026. Attention Smoothing Is All You Need For Unlearning. (<strong>ICLR-2026</strong>)&nbsp;<br></p>
-                </div>
-            </div>
+      </div>
+      <div class="paper-card">
+        <span class="paper-venue venue-top">ICLR-26</span>
+        <div>
+          <div class="paper-title"><a href="https://arxiv.org/pdf/2603.01285">Attention Smoothing is All You Need for Unlearning</a></div>
+          <div class="paper-authors">Zade, S.Z., Zhou, X., Liu, S. and <strong>Zhu, D.</strong></div>
         </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="content14 cid-sEooiDLZnC" id="content14-18">
-    
-    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-12">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-7"><strong>Large Vision-Language Model (LVLM) Spatial Reasoning </strong>refers to the emerging capability of multimodal foundation models to understand, infer, and manipulate spatial relationships between objects, regions, and the environment in images or videos while grounding their reasoning in natural language. Our research area focuses on enabling LVLMs to perform fine-grained, pixel-grounded, and spatial-aware reasoning tasks, such as depth ordering, occlusion understanding, spatial layout prediction, and region-referenced grounding, that are essential for pedestrian navigation, robotics, accessibility, and embodied AI. By integrating visual features with language-conditioned attention mechanisms, LVLMs can generate structured explanations, produce spatially aligned outputs (e.g., segmentation masks or bounding regions), and answer complex questions that require joint visual understanding and geometric reasoning.&nbsp;</h3>
-                <ul class="list mbr-fonts-style display-4"></ul>
-            </div>
+      </div>
+      <div class="paper-card">
+        <span class="paper-venue venue-mid">arXiv</span>
+        <div>
+          <div class="paper-title"><a href="#">Alignment of LRMs via Counter-Aligned Few-Shot Conversation Exposure</a></div>
+          <div class="paper-authors">Zhou, X., Zade, S.Z. and <strong>Zhu, D.</strong> — Under Review</div>
         </div>
+      </div>
     </div>
-</section>
+  </div>
 
-<section data-bs-version="5.1" class="image1 cid-v2JniN6Av0" id="image1-29">
-    
+  <hr class="area-divider">
 
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <a href="assets/files/Idea_Figure_UnLearning.pdf"><img src="assets/images/spatial-reasoning-1256x550.png" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Grounded Vision–Language Conversation&nbsp;</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Spatial Reasoning LVLM&nbsp;</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">Ensuring accessible pedestrian navigation requires models that can jointly reason about semantic and spatial aspects of complex scenes, a capability missing in existing LVLMs. We introduce a pixel-grounded LVLM that unifies language reasoning and segmentation to provide depth-aware accessibility guidance. We also present PAVE, a 41k-image benchmark with accessibility-aware and depth-grounded annotations, and demonstrate that it delivers strong grounded reasoning and segmentation performance.<br>Rafi Ibn Sultan, Zhu, H, Li, C, Khanduri, P, Brocanelli, M and <strong>Zhu D</strong> "WalkGPT: Grounded Vision–Language Conversation with Depth-Aware Segmentation for Pedestrian Navigation" (<strong>CVPR-2026</strong>).&nbsp;<br><br></p>
-                </div>
-            </div>
+  <!-- AREA 2: LVLM Spatial Reasoning -->
+  <div class="area" id="lvlm">
+    <div class="area-header">
+      <span class="area-num">02</span>
+      <h2 class="area-title">Large Vision-Language Model (LVLM) Spatial Reasoning</h2>
+    </div>
+    <p class="area-desc">
+      Spatial reasoning is an emerging capability of multimodal foundation models to understand and manipulate spatial relationships between objects and environments while grounding reasoning in natural language. Our research enables LVLMs to perform <strong>pixel-grounded, depth-aware, and spatially-aligned reasoning</strong> tasks essential for pedestrian navigation, robotics, accessibility, and embodied AI.
+    </p>
+    <div class="paper-grid">
+      <div class="paper-card">
+        <span class="paper-venue venue-top">CVPR-26</span>
+        <div>
+          <div class="paper-title"><a href="https://arxiv.org/abs/2603.10703">WalkGPT: Grounded Vision–Language Conversation with Depth-Aware Segmentation for Pedestrian Navigation</a></div>
+          <div class="paper-authors">Sultan, R.I., Zhu, H., Li, C., Khanduri, P., Brocanelli, M. and <strong>Zhu, D.</strong></div>
         </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="content14 cid-v2JnqLUS8o" id="content14-2b">
-    
-    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-12">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-7"><strong>Large Language Model (LLM) Safety&nbsp;</strong>research seeks to understand, predict, and mitigate the risks that arise when powerful generative models interact with humans and real-world systems. Our work spans several major categories: (1) alignment and preference optimization, which ensure models follow human values and avoid harmful behaviors; (2) robustness and adversarial safety, which study vulnerabilities such as jailbreaks, prompt injection, (3) distributional shifts; content safety and risk prevention, focusing on reducing harmful outputs across domains like biosecurity, misinformation, and hate/abuse and (4) evaluation and benchmarking, which create systematic tests, often domain-specific, for measuring safety performance across tasks, populations, and risk tiers.&nbsp;</h3>
-                <ul class="list mbr-fonts-style display-4"></ul>
-            </div>
+      </div>
+      <div class="paper-card">
+        <span class="paper-venue venue-mid">arXiv</span>
+        <div>
+          <div class="paper-title"><a href="https://arxiv.org/abs/2503.23534">BiPVL-Seg: Bidirectional Progressive Vision-Language Fusion with Global-Local Alignment for Medical Image Segmentation</a></div>
+          <div class="paper-authors">Sultan, R.I., Zhu, H., Li, C. and <strong>Zhu, D.</strong></div>
         </div>
+      </div>
     </div>
-</section>
+  </div>
 
-<section data-bs-version="5.1" class="image1 cid-uuRFMxv69x" id="image1-21">
-    
+  <hr class="area-divider">
 
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <a href="https://github.com/dongxiaozhu/dongxiaozhu.github.io/tree/master/assets/images/example.png"><img src="assets/images/idea-figure-poisoning-1256x629.png" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Learning to poison attack</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Learning to Poison Large Language Models During Instruction Tuning</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">A novel gradient-guided backdoor trigger learning (GBTL) algorithm to identify adversarial triggers efficiently, ensuring an evasion of detection by conventional defenses while maintaining content integrity.<br><br>Qiang Y, Zhou X, Zade SZ, Roshani MA, Khanduri P, Zytko D, Zhu D. <strong><a href="https://arxiv.org/abs/2402.13459" class="text-primary">Learning to poison large language models during instruction tuning</a></strong>. arXiv preprint arXiv:2402.13459. 2024 Feb 21.<br></p>
-                </div>
-            </div>
+  <!-- AREA 3: LLM Safety -->
+  <div class="area" id="safety">
+    <div class="area-header">
+      <span class="area-num">03</span>
+      <h2 class="area-title">LLM Safety &amp; Adversarial Robustness</h2>
+    </div>
+    <p class="area-desc">
+      LLM safety research spans <strong>alignment and preference optimization</strong>, adversarial robustness (jailbreaks, prompt injection), distributional shifts, content safety, and evaluation/benchmarking. Our work includes novel backdoor attack algorithms, adversarial in-context learning, and defenses against hijacking.
+    </p>
+    <div class="paper-grid">
+      <div class="paper-card">
+        <span class="paper-venue venue-mid">ECAI-25</span>
+        <div>
+          <div class="paper-title"><a href="https://arxiv.org/pdf/2505.03392">Automatic Calibration for Membership Inference Attack on Large Language Models</a></div>
+          <div class="paper-authors">Zade, S.Z., Qiang, Y., Zhou, X., Zhu, H., Roshani, M.A., Khanduri, P. and <strong>Zhu, D.</strong></div>
         </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="image1 cid-uuRFOEUNZg" id="image1-22">
-    
-
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <a href="https://github.com/dongxiaozhu/dongxiaozhu.github.io/tree/master/assets/images/illustration.png"><img src="assets/images/illustration-1-1256x469.png" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Hijacking attack during In-Context-Learning</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Adversarial In-Context Learning</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">This work introduces a novel transferable attack against In-Context-Learning to hijack LLMs to generate the target response or jailbreak.&nbsp; We also propose a defense strategy against hijacking attacks through the use of extra clean demos, which enhances the robustness of LLMs during ICL.<br>
-<br>Qiang, Y., Zhou, X. and <strong>Zhu, D.</strong>, 2023. <a href="https://arxiv.org/abs/2311.09948" class="text-primary">Hijacking Large Language Models via Adversarial In-Context Learning</a>. arXiv e-prints, pp.arXiv-2311.&nbsp;<br></p>
-                </div>
-            </div>
+      </div>
+      <div class="paper-card">
+        <span class="paper-venue venue-mid">arXiv</span>
+        <div>
+          <div class="paper-title"><a href="https://arxiv.org/abs/2402.13459">Learning to Poison Large Language Models During Instruction Tuning</a></div>
+          <div class="paper-authors">Qiang, Y., Zhou, X., Zade, S.Z., Roshani, M.A., Khanduri, P., Zytko, D. and <strong>Zhu, D.</strong></div>
         </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="content14 cid-v2IGvOp9Li" id="content14-27">
-    
-    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-12">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-7"><strong>Interpretable Machine Learning and Explainable AI (XAI) </strong>research attempts to understand (1) from developer perspective how information flows from input to output and what Deep Neural Network learns, and (2) from both end user and developer perspectives, what does DNN 'see' in the image or 'comprehend' in natural language. We have made original contributions to both directions of current XAI research: <strong>explainable model prediction</strong> and <strong>interpretable feature representation learning.</strong></h3>
-                <ul class="list mbr-fonts-style display-4"></ul>
-            </div>
+      </div>
+      <div class="paper-card">
+        <span class="paper-venue venue-mid">arXiv</span>
+        <div>
+          <div class="paper-title"><a href="#">Hijacking Large Language Models via Adversarial In-Context Learning</a></div>
+          <div class="paper-authors">Qiang, Y., Zhou, X. and <strong>Zhu, D.</strong></div>
         </div>
+      </div>
     </div>
-</section>
+  </div>
 
-<section data-bs-version="5.1" class="image1 cid-v2IGxbAhKR" id="image1-28">
-    
+  <hr class="area-divider">
 
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <a href="assets/files/Idea Figure UnLearning.pdf"><img src="assets/images/methods-1076x409.jpg" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Attentive Class Activation Token (AttCAT)</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Explaining Transformer prediction</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">A novel Transformer explanation technique via attentive&nbsp;class activation tokens, aka, AttCAT, leveraging encoded features, their gradients, and their attention weights to generate a faithful and confident explanation for Transformer’s output<br>Qiang, Y, Pan, D, Li, C, Li, X, Jang, R, and <strong>Zhu, D</strong>. (2022) <a href="https://openreview.net/pdf?id=cA8Zor8wFr5" class="text-primary">AttCAT: Explaining Transformers via Attentive Class Activation Tokens</a>. In the Proceedings of Thirty-sixth Conference on Neural Information Processing Systems (<strong>NuerIPS-22</strong>), New Orleans, LA, USA.<br></p>
-                </div>
-            </div>
+  <!-- AREA 4: XAI -->
+  <div class="area" id="xai">
+    <div class="area-header">
+      <span class="area-num">04</span>
+      <h2 class="area-title">Explainable &amp; Interpretable AI</h2>
+    </div>
+    <p class="area-desc">
+      Interpretable Machine Learning and Explainable AI (XAI) research addresses both <strong>developer-facing understanding</strong> (how information flows inside DNNs) and <strong>end-user-facing explanation</strong> (what a model "sees" in an image or "comprehends" in text). Original contributions span explainable model prediction and interpretable feature representation learning.
+    </p>
+    <div class="paper-grid">
+      <div class="paper-card">
+        <span class="paper-venue venue-top">NeurIPS-22</span>
+        <div>
+          <div class="paper-title"><a href="https://openreview.net/pdf?id=cA8Zor8wFr5">AttCAT: Explaining Transformers via Attentive Class Activation Tokens</a></div>
+          <div class="paper-authors">Qiang, Y., Pan, D., Li, C., Li, X., Jang, R. and <strong>Zhu, D.</strong></div>
         </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="image1 cid-sEoldobSNS" id="image1-17">
-    
-
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <a href="assets/files/ijcai21_CRC.pdf"><img src="assets/images/discrimnating-793x292.jpg" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Adversarial Gradient Integration (AGI)</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Explaining DNN prediction</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">Adversarial Gradient Integration (AGI) to explain the attribution of each pixel or each token to the DNN’s class prediction via integrating gradients from adversarial examples to the test examples for the target class.<br>Pan, D, Li, X and <strong>Zhu, D. </strong>(2021) <a href="assets/files/ijcai21_CRC.pdf" class="text-primary">Explaining Deep Neural Network Models with Adversarial Gradient Integration</a>. In 30th International Joint Conference on Artificial Intelligence (<strong>IJCAI-21</strong>), Montreal, Canada.<br></p>
-                </div>
-            </div>
+      </div>
+      <div class="paper-card">
+        <span class="paper-venue venue-top">IJCAI-23</span>
+        <div>
+          <div class="paper-title"><a href="https://arxiv.org/pdf/2301.06989.pdf">Negative Flux Aggregation to Estimate Feature Attributions</a></div>
+          <div class="paper-authors">Li, X. and <strong>Zhu, D.</strong></div>
         </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="image1 cid-sEoj0IDD8I" id="image1-16">
-    
-
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <a href="https://www.ijcai.org/proceedings/2020/373"><img src="assets/images/explain-ex-625x195.png" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Interpretable Feature Mapping (IFM)</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Interpretable feature mapping</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">An interpretable neural network architecture allowing interpretable feature mapping via dissecting latent layers guided by aspects and demonstrated applications in explainable recommender’s system.<br>Pan, D, Li, X, Li, X and <strong>Zhu, D.</strong> (2020) <a href="https://www.ijcai.org/Proceedings/2020/0373.pdf" class="text-primary">Explainable recommendation via interpretable feature mapping and evaluating explainability</a>. In the proceedings of 29th International Joint Conference on Artificial Intelligence (<strong>IJCAI-20</strong>), Yokohama, Japan.&nbsp;<br></p>
-                </div>
-            </div>
+      </div>
+      <div class="paper-card">
+        <span class="paper-venue venue-top">AAAI-24</span>
+        <div>
+          <div class="paper-title"><a href="https://arxiv.org/pdf/2312.13630.pdf">MFABA: A More Faithful and Accelerated Boundary-based Attribution Method for Deep Neural Networks</a></div>
+          <div class="paper-authors">Multiple authors and <strong>Zhu, D.</strong></div>
         </div>
+      </div>
     </div>
-</section>
+  </div>
 
-<section data-bs-version="5.1" class="content14 cid-v2npNLhNNo" id="content14-26">
-    
-    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-12">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-7"><strong>Adversarial robustness of DNNs </strong>research: we develop novel feature representation learning approaches to improve the adversarial robustness of the DNN via <strong>learning compact feature representation</strong>. We achieve this goal via designing novel <strong>natural training</strong> and <strong>adversarial training</strong> schemes. We also design adversarial attack and defense strategies to improve the safety of <strong>Large Language Models</strong> (LLMs).</h3>
-                <ul class="list mbr-fonts-style display-4"></ul>
-            </div>
+  <hr class="area-divider">
+
+  <!-- AREA 5: Fairness -->
+  <div class="area" id="fairness">
+    <div class="area-header">
+      <span class="area-num">05</span>
+      <h2 class="area-title">Algorithmic Fairness</h2>
+    </div>
+    <p class="area-desc">
+      Fairness in AI addresses biases embedded in training data and model design that lead to disparate outcomes across demographic groups. Our work develops methods that jointly promote <strong>fairness, explainability, and robustness</strong> in deep neural networks, including vision transformers.
+    </p>
+    <div class="paper-grid">
+      <div class="paper-card">
+        <span class="paper-venue venue-top">ECCV-24</span>
+        <div>
+          <div class="paper-title"><a href="https://arxiv.org/abs/2301.13803">Fairness-aware Vision Transformer via Debiased Self-Attention</a></div>
+          <div class="paper-authors">Qiang, Y. and <strong>Zhu, D.</strong></div>
         </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="image1 cid-sEopdyQtEz" id="image1-19">
-    
-
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <a href="https://ojs.aaai.org/index.php/AAAI/article/view/17030/16837"><img src="assets/images/picture4-1076x424.png" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Probabilistically Compact (PC) loss
-<br>with logit constraints</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Probabilistically Compact (PC) loss&nbsp;</strong><strong style="font-size: 2rem;">with logit constraints</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">A new Probabilistically Compact loss (PC loss) to directly enlarge the probability gap between true class and false classes to improve adversarial robustness of DNNs.
-<br>Li, X, Li, X, Pan,D and <strong>Zhu, D.</strong> (2021) <a href="https://ojs.aaai.org/index.php/AAAI/article/view/17030" class="text-primary">Improving adversarial robustness via probabilistically compact loss with logit constraints</a>. In the proceedings of Thirty-Five AAAI Conference on Artificial Intelligence (<strong>AAAI-21</strong>), virtual conference.&nbsp;<br></p>
-                </div>
-            </div>
+      </div>
+      <div class="paper-card">
+        <span class="paper-venue venue-top">IJCAI-22</span>
+        <div>
+          <div class="paper-title"><a href="#">Counterfactual Interpolation Augmentation (CIA): A Unified Approach to Enhance Fairness and Explainability of DNN</a></div>
+          <div class="paper-authors">Qiang, Y. and <strong>Zhu, D.</strong></div>
         </div>
+      </div>
     </div>
-</section>
+  </div>
 
-<section data-bs-version="5.1" class="content14 cid-sEoz0piasa" id="content14-1b">
-    
-    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-12">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-7"><strong>Fairness of DNNs </strong>research: this includes mitigation of <strong>class-imbalance</strong> and <strong>group-imbalance</strong> issues. To mitigate group-imbalance issue, we developed Multi-Task Learning (MTL) algorithms to predict time-to-event and ordinal outcomes. To overcome class-imbalance issue, we developed a cost-sensitive approach to design optimal weight schemes. We explicated the learning property of logistic and softmax loss functions by analyzing the necessary condition (e.g., gradient equals to zero) after training converges.</h3>
-                <ul class="list mbr-fonts-style display-4"></ul>
-            </div>
+  <hr class="area-divider">
+
+  <!-- AREA 6: AI for Health -->
+  <div class="area" id="health">
+    <div class="area-header">
+      <span class="area-num">06</span>
+      <h2 class="area-title">AI for Health &amp; Social Good</h2>
+    </div>
+    <p class="area-desc">
+      Use-inspired AI research applies foundational methods to pressing human-centered challenges in <strong>medical imaging, clinical risk assessment, mobility equity, and accessibility</strong>. Work in this area has been featured in Detroit PBS, WJR Radio, and Hour Detroit Magazine.
+    </p>
+    <div class="paper-grid">
+      <div class="paper-card">
+        <span class="paper-venue venue-top">MIDL-26</span>
+        <div>
+          <div class="paper-title"><a href="https://arxiv.org/abs/2512.22425">FluenceFormer: Transformer-Driven Multi-Beam Fluence Map Regression for Radiotherapy Planning</a></div>
+          <div class="paper-authors">Mgboh, U. and <strong>Zhu, D.</strong></div>
         </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="image1 cid-uuRIUBi1jK" id="image1-23">
-    
-
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <a href="https://github.com/dongxiaozhu/dongxiaozhu.github.io/tree/master/assets/images/architecture.png"><img src="assets/images/architecture-1256x649.png" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">The Debiased Self-Attention (DSA) framework.</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Fairness-aware Vision Transformer&nbsp;&nbsp;</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">We developed Debiased Self-Attention (DSA), is a fairness-through-blindness approach that enforces ViT to eliminate spurious features correlated with the sensitive attributes for bias mitigation. Adversarial examples are leveraged to locate and mask the spurious features in the input image patches with attention weights alignment.<br><br>Qiang Y, Li C, Khanduri P, Zhu D. <a href="https://arxiv.org/abs/2301.13803" class="text-primary">Fairness-aware vision transformer via debiased self-attention</a>. <strong>ECCV-24</strong>.<br></p>
-                </div>
-            </div>
+      </div>
+      <div class="paper-card">
+        <span class="paper-venue venue-top">MICCAI-23</span>
+        <div>
+          <div class="paper-title"><a href="https://arxiv.org/pdf/2210.03189.pdf">FocalUNETR: A Focal Transformer for Boundary-aware Prostate Segmentation using CT Images</a></div>
+          <div class="paper-authors">Li, C. and <strong>Zhu, D.</strong></div>
         </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="image1 cid-t3JQn0HtFs" id="image1-1m">
-    
-
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <img src="assets/images/celeba-787x516.png" alt="Mobirise">
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Attribution map generated by CIA</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Counterfactual interpolation augmentation&nbsp;</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">A novel generative data augmentation approach to create counterfactual samples to make the sensitive attribute and the target attribute d-separated to achieve fairness and the interpolation path ensures attribution based explainability.&nbsp;<br><br>Qiang, Y, Li, C, Brocanelli, M, <strong>Zhu, D.</strong> (2022) <a href="https://www.ijcai.org/proceedings/2022/0103.pdf" class="text-primary">Counterfactual Interpolation Augmentation (CIA): A Unified Approach to Enhance Fairness and Explainability of DNN</a>. In the proceedings of 31st International Joint Conference on Artificial Intelligence (<strong>IJCAI-22</strong>), Messe Wien, Vienna, Austria.<br></p>
-                </div>
-            </div>
+      </div>
+      <div class="paper-card">
+        <span class="paper-venue venue-mid">JMIR-AI</span>
+        <div>
+          <div class="paper-title"><a href="https://ai.jmir.org/2025/1/e67363">Conversational Risk Assessment for Clinical Applications</a></div>
+          <div class="paper-authors">Roshani, M.A. and <strong>Zhu, D.</strong></div>
         </div>
+      </div>
     </div>
-</section>
+  </div>
 
-<section data-bs-version="5.1" class="image1 cid-sEopevIV1t" id="image1-1a">
-    
+</div>
 
-    
+<footer>
+  <div class="foot-nav">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+  </div>
+  <div>© 2021–2026 Dongxiao Zhu · Wayne State University · Detroit, MI</div>
+</footer>
 
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <a href="https://ojs.aaai.org//index.php/AAAI/article/view/5907"><img src="assets/images/cifartsne-1-1076x551.jpg" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">In-Training Representation Alignment (ITRA)</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Learning property of cross-entropy loss based DNNs</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">A novel reweighted logistic loss for multi-class classification to improve ordinary logistic loss by focusing on learning hard non-target classes (target vs. non-target class in one-vs.-all) <br>Li, X, Li, X, Pan,D and <strong>Zhu, D.</strong> (2020) <a href="https://ojs.aaai.org//index.php/AAAI/article/view/5907" class="text-primary">On the learning behavior of logistic and softmax losses for deep neural networks</a>. In the proceedings of Thirty-Fourth AAAI Conference on Artificial Intelligence (<strong>AAAI-20</strong>), New York, USA.&nbsp;<br></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="content14 cid-sEoeeScyM9" id="content14-13">
-    
-    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-12">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-7"><strong>Use-inspired Trustworthy AI Research: </strong>Healthcare data is featured with <strong>high dimension</strong>, <strong>heterogeneity</strong> and <strong>label scarcity</strong>. Our AI applications in healthcare research lies in patient subgroup identification and risk factor prioritization. To overcome label scarcity issue, we used primary labels together with auxiliary labels as regularization to learn features and improve prediction performance. We also tackle the label scarcity issue using semi-supervised and active learning approaches using EHR data. To address the data heterogeneity issue, we developed multi-task deep feature learning approaches to learn general features for predicting population-wide and task-specific features for predicting group-specific health outcomes. When patient groups are undefined, we generalized it with a deep mixture neural network model to predict health outcomes for latent groups. Our recent research thrust lies in trustworthy AI algorithms with community driven innovations for social good, such as health and wellbeing, mobility equity, security and privacy.</h3>
-                <ul class="list mbr-fonts-style display-4"></ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="image1 cid-sEunmEIQBF" id="image1-1c">
-    
-
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7233047/"><img src="assets/images/3269941f3-641x201.jpg" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Deep Mixture Neural Network (DMNN) predictive model</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Clinical outcome predictive model with patient stratification</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">Existing DNN predictive models either relies on pre-defined patient subgroups or one-size-fit-all. We develop a novel Deep Mixture Neural Network based predictive models for patient stratification and group-specific risk factor prioritization.&nbsp;<br>Li, X, <strong>Zhu, D*</strong> and Levy, P (2020) <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7233047/" class="text-primary">Predicting clinical outcomes with patient stratification via deep mixture neural networks</a>. American Medical Informatics Association (AMIA-20) Summit on Clinical Research Informatics, Houston, USA. (Best Student Paper Award, *Corresponding Autor) PubMed <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7233047/" class="text-primary">32477657</a><br></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="image1 cid-sEunnrAxQ1" id="image1-1d">
-    
-
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <a href="https://dongxiaozhu.github.io/BIBM19-ObesityRiskFactors.pdf"><img src="assets/images/picture1-647x342.jpg" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Multi-Task Learning (MTL) for risk factor prioritization&nbsp;</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Prioritizing multi-level risk factors for obesity</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">Many behavior disorders, e.g., obesity, are multi-faced health outcome and risk factors are highly specific to certain subpopulation groups residing in different geospatial districts. We develop a Multi-Task Learning (MTL) approach for prioritize multi-level risk factors.&nbsp;<br>Wang, Dong, M, Towner, E and Zhu, D. (2019) <a href="https://dongxiaozhu.github.io/BIBM19-ObesityRiskFactors.pdf" class="text-primary">Prioritization of multi-level risk factors for obesity</a>. In the proceedings of 2019 IEEE International Conference on Bioinformatics and Biomedicine (BIBM-19), 1065-1072.<br><br></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="image1 cid-sEunoqMluM" id="image1-1e">
-    
-
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <a href="https://arxiv.org/pdf/1906.03691.pdf"><img src="assets/images/picture2-623x352.png" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Age effect identification from fMRI&nbsp;</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Aging effect from human fetal brain using spontaneous fMRI</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">We design a deep 3D CNN to fetal blood oxygen-level dependence (BOLD) resting-state fMRI data to isolate the variation in fMRI signals that relates to the age effect.<br>Li, X., Hect, J., Thompson, J. and Zhu, D. (2020). <a href="https://arxiv.org/pdf/1906.03691.pdf" class="text-primary">Interpreting age effects of human fetal brain from spontaneous fMRI using deep 3D convolutional neural networks</a>. IEEE International Symposium on Biomedical Imaging (ISBI-20), Iowa City, USA.<br></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="image1 cid-sEuE6mpyn9" id="image1-1f">
-    
-
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <a href="https://openreview.net/forum?id=otswIbmgYA"><img src="assets/images/frameworkv6-1076x395.png" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">Automatic radiologist report generation</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Automatic generation of radiologist report</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">We present Vispi, an automatic medical image interpretation system, which first annotates an image via classifying and localizing common thoracic diseases with visual support and then followed by report generation from an attentive LSTM model.  <br>Li, X., Cao, R., &amp; Zhu, D. (2020). <a href="https://openreview.net/forum?id=otswIbmgYA" class="text-primary">Vispi: Automatic visual perception and interpretation of chest X-rays</a>. In the proceedings of the Medical Imaging with Deep Learning (MIDL-20) conference, Montreal, CA.<br></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="content14 cid-tdsxc3BTBY" id="content14-1r">
-    
-    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-12">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-4 display-7"><strong>AI for Science: </strong>AI has been increasingly applied to <strong>life</strong>, <strong>physical</strong> and <strong>social</strong> science domains to solve the real-world problems. In life science domain, I develop mining and learning algorithms to analyze the deep sequencing data (DNA-Seq or RNA-Seq). The Graphical User Interface software <a href="http://sammate.sourceforge.net/" class="text-primary">SAMMATE</a> has become a standard software suite in RNA-Seq data based research area. Other GUI software <a href="http://dsplicetype.sourceforge.net/" class="text-primary">dSpliceType</a>&nbsp;for detecting tissue specific differential splicing and <a href="https://code.google.com/archive/p/teak/" class="text-primary">TEAK</a> for detecting activated sub-pathways have also been widely used by the life science research community.&nbsp; &nbsp; &nbsp;</h3>
-                <ul class="list mbr-fonts-style display-4"></ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="image1 cid-tdsCMhhsbx" id="image1-1t">
-    
-
-    
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-                <div class="image-wrapper">
-                    <a href="http://sammate.sourceforge.net/"><img src="assets/images/sammate-small-672x261.png" alt="Mobirise"></a>
-                    <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">SAMMate: RNA-Seq data analysis software suite with GUI</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg">
-                <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>RNA-Seq and Subpathway Analysis</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">Deng N, Puetter, A, Zhang, K, Johnson, K., Zhao, Z, Taylor, C, Flemington, E and Zhu, D. (2011) <a href="https://academic.oup.com/nar/article/39/9/e61/1254609?login=false" class="text-primary">Isoform-level microRNA-155 Target Prediction using RNA-seq</a>. <em>Nucleic Acids Res</em>., doi: 10.1093/nar/gkr042.  
-<br>
-<br>Judeh, T, Johnson, C, Kumar, A, Zhu, D (2013) <a href="https://academic.oup.com/nar/article/41/3/1425/2903069?login=false" class="text-primary">TEAK: Topological Enrichment Analysis frameworK for detecting activated biological subpathways</a>. <em>Nucleic Acids Res.</em>, doi: 10.1093/nar/gks1299.<br></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="footer3 cid-sEd9n64OAA" once="footers" id="footer3-s">
-
-    
-
-    <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(255, 255, 255);"></div>
-
-    <div class="container">
-        <div class="media-container-row align-center mbr-white">
-            <div class="row row-links">
-                <ul class="foot-menu">
-                    
-                    
-                    
-                    
-                    
-                <li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html" class="text-success">Home</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="research.html" class="text-success text-primary">Research</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="publications.html" class="text-success text-primary">Publication</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="teaching.html" class="text-success text-primary">Teaching</a></li></ul>
-            </div>
-            
-            <div class="row row-copirayt">
-                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
-                    © Copyright 2021- 2025 Dongxiao Zhu. All Rights Reserved.
-                </p>
-            </div>
-        </div>
-    </div>
-</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/2545557" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/no-code-website-builder.html">No Code Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>  
-  
-  
 </body>
 </html>
