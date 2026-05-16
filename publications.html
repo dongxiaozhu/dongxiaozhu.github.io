@@ -9,109 +9,77 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0f2140; --navy-mid: #1e3a5f; --navy-light: #e8edf4;
-    --gold: #c8932a; --gold-light: #fdf3e0;
-    --slate: #4a5568; --muted: #718096; --border: #e2e6ec;
-    --bg: #f8f9fb; --white: #ffffff; --text: #1a202c; --accent: #2563eb;
+    --navy:#0f2140;--navy-mid:#1e3a5f;--navy-light:#e8edf4;
+    --gold:#c8932a;--gold-light:#fdf3e0;
+    --slate:#4a5568;--muted:#718096;--border:#e2e6ec;
+    --bg:#f8f9fb;--white:#ffffff;--text:#1a202c;--accent:#2563eb;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'IBM Plex Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-
-  nav {
-    position: sticky; top: 0; z-index: 100;
-    background: var(--white); border-bottom: 1px solid var(--border);
-    padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px;
-  }
-  .nav-brand { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); text-decoration: none; }
-  .nav-links { display: flex; }
-  .nav-links a {
-    text-decoration: none; font-size: 0.82rem; font-weight: 500; color: var(--slate);
-    letter-spacing: 0.04em; text-transform: uppercase; padding: 0 1.1rem; height: 56px;
-    display: flex; align-items: center; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s;
-  }
-  .nav-links a:hover, .nav-links a.active { color: var(--navy); border-bottom-color: var(--gold); }
-
-  .page-header {
-    background: var(--white); border-bottom: 1px solid var(--border); padding: 2.5rem 2rem 2rem;
-  }
-  .page-header-inner { max-width: 960px; margin: 0 auto; }
-  .page-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-  .page-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--navy); font-weight: 600; }
-  .page-intro { font-size: 0.88rem; color: var(--slate); margin-top: 0.7rem; }
-  .page-intro a { color: var(--accent); text-decoration: none; }
-
-  .main { max-width: 960px; margin: 0 auto; padding: 3rem 2rem; }
-
-  /* STATS ROW */
-  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 3rem; }
-  .stat-card {
-    background: var(--white); border: 1px solid var(--border); border-radius: 4px;
-    padding: 1.1rem 1.2rem; border-top: 3px solid var(--navy-mid);
-  }
-  .stat-num { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--navy); font-weight: 600; }
-  .stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.1rem; line-height: 1.4; }
-
-  /* FUNDING */
-  .section { margin-bottom: 3rem; }
-  .section-title {
-    font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--navy); font-weight: 600;
-    margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border);
-  }
-  .funding-list { display: flex; flex-direction: column; gap: 0.6rem; }
-  .funding-item {
-    background: var(--white); border: 1px solid var(--border); border-radius: 4px;
-    padding: 0.85rem 1.1rem; display: grid; grid-template-columns: auto 1fr; gap: 0.8rem; align-items: baseline;
-  }
-  .funding-role {
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; font-weight: 600;
-    padding: 0.2rem 0.5rem; border-radius: 2px; white-space: nowrap; letter-spacing: 0.04em;
-  }
-  .role-pi { background: #0f2140; color: #fff; }
-  .role-copi { background: var(--navy-light); color: var(--navy-mid); border: 1px solid #b8c8da; }
-  .role-co-i { background: var(--bg); color: var(--slate); border: 1px solid var(--border); }
-  .funding-title { font-size: 0.85rem; color: var(--text); font-weight: 500; line-height: 1.5; }
-  .funding-title a { color: var(--accent); text-decoration: none; }
-  .funding-title a:hover { text-decoration: underline; }
-  .funding-meta { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
-
-  /* PUBLICATION GROUPS */
-  .pub-group { margin-bottom: 2.5rem; }
-  .pub-group-title {
-    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border);
-  }
-  .pub-list { display: flex; flex-direction: column; gap: 0; }
-  .pub-item {
-    padding: 0.8rem 0; border-bottom: 1px solid var(--border);
-    display: grid; grid-template-columns: 72px 1fr; gap: 1rem; align-items: baseline;
-  }
-  .pub-item:last-child { border-bottom: none; }
-  .pub-tag {
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; font-weight: 600;
-    padding: 0.2rem 0.4rem; border-radius: 2px; text-align: center; white-space: nowrap;
-    background: #0f2140; color: #fff; letter-spacing: 0.02em;
-  }
-  .pub-tag.preprint { background: var(--bg); color: var(--muted); border: 1px solid var(--border); }
-  .pub-title { font-size: 0.87rem; font-weight: 600; color: var(--navy); line-height: 1.45; margin-bottom: 0.2rem; }
-  .pub-title a { color: inherit; text-decoration: none; }
-  .pub-title a:hover { color: var(--accent); text-decoration: underline; }
-  .pub-authors { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
-  .pub-authors strong { color: var(--slate); }
-  .oral-badge { display: inline-block; font-size: 0.65rem; font-weight: 600; color: #7a3500; background: #fef0ea; border: 1px solid #f0c09a; padding: 0.1rem 0.35rem; border-radius: 2px; margin-left: 0.3rem; vertical-align: middle; }
-
-  footer {
-    background: var(--navy); color: rgba(255,255,255,0.55);
-    text-align: center; padding: 2rem; font-size: 0.78rem; margin-top: 2rem;
-  }
-  footer a { color: rgba(255,255,255,0.75); text-decoration: none; }
-  footer a:hover { color: #fff; }
-  .foot-nav { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.8rem; }
-
-  @media (max-width: 600px) {
-    .stats-row { grid-template-columns: 1fr 1fr; }
-    .pub-item { grid-template-columns: 1fr; }
-    .funding-item { grid-template-columns: 1fr; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+  nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;}
+  .nav-brand{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--navy);text-decoration:none;}
+  .nav-links{display:flex;}
+  .nav-links a{text-decoration:none;font-size:.82rem;font-weight:500;color:var(--slate);letter-spacing:.04em;text-transform:uppercase;padding:0 1.1rem;height:56px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--navy);border-bottom-color:var(--gold);}
+  .page-header{background:var(--white);border-bottom:1px solid var(--border);padding:2.5rem 2rem 2rem;}
+  .page-header-inner{max-width:960px;margin:0 auto;}
+  .page-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;}
+  .page-title{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);font-weight:600;}
+  .page-intro{font-size:.88rem;color:var(--slate);margin-top:.7rem;}
+  .page-intro a{color:var(--accent);text-decoration:none;}
+  .page-intro a:hover{text-decoration:underline;}
+  .main{max-width:960px;margin:0 auto;padding:3rem 2rem;}
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2.5rem;}
+  .stat-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.1rem 1.2rem;border-top:3px solid var(--navy-mid);}
+  .stat-num{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--navy);font-weight:600;}
+  .stat-label{font-size:.75rem;color:var(--muted);margin-top:.1rem;line-height:1.4;}
+  .jump-nav{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:2.5rem;}
+  .jump-link{font-size:.75rem;font-weight:500;color:var(--navy-mid);background:var(--navy-light);border:1px solid #c8d3e3;padding:.25rem .7rem;border-radius:2px;text-decoration:none;transition:background .15s;}
+  .jump-link:hover{background:#d8e3f0;}
+  .section{margin-bottom:3rem;}
+  .section-title{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--navy);font-weight:600;margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+  .section-title span{font-family:'IBM Plex Sans',sans-serif;font-size:.85rem;font-weight:400;color:var(--muted);}
+  .funding-list{display:flex;flex-direction:column;gap:.6rem;}
+  .funding-item{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:.85rem 1.1rem;display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:baseline;}
+  .funding-role{font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:600;padding:.2rem .5rem;border-radius:2px;white-space:nowrap;letter-spacing:.04em;}
+  .role-pi{background:#0f2140;color:#fff;}
+  .role-copi{background:var(--navy-light);color:var(--navy-mid);border:1px solid #b8c8da;}
+  .role-coi{background:var(--bg);color:var(--slate);border:1px solid var(--border);}
+  .role-sp{background:#f0f0f0;color:#555;border:1px solid #ccc;}
+  .funding-title{font-size:.85rem;color:var(--text);font-weight:500;line-height:1.5;}
+  .funding-title a{color:var(--accent);text-decoration:none;}
+  .funding-title a:hover{text-decoration:underline;}
+  .funding-meta{font-size:.75rem;color:var(--muted);margin-top:.2rem;}
+  .pub-group{margin-bottom:2rem;}
+  .pub-group-title{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.6rem;}
+  .count{font-family:'IBM Plex Mono',monospace;font-size:.65rem;background:var(--bg);border:1px solid var(--border);color:var(--muted);padding:.1rem .4rem;border-radius:2px;}
+  .pub-list{display:flex;flex-direction:column;}
+  .pub-item{padding:.75rem 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:90px 1fr;gap:1rem;align-items:baseline;}
+  .pub-item:last-child{border-bottom:none;}
+  .pub-tag{font-family:'IBM Plex Mono',monospace;font-size:.63rem;font-weight:600;padding:.2rem .35rem;border-radius:2px;text-align:center;white-space:nowrap;letter-spacing:.02em;line-height:1.4;}
+  .pub-tag.top{background:#0f2140;color:#fff;}
+  .pub-tag.mid{background:var(--navy-light);color:var(--navy-mid);border:1px solid #b8c8da;}
+  .pub-tag.jnl{background:#f0f7ee;color:#2d6a2d;border:1px solid #b0d9b0;}
+  .pub-tag.pre{background:var(--bg);color:var(--muted);border:1px solid var(--border);}
+  .pub-tag.wks{background:#fdf3e0;color:#7a5500;border:1px solid #e8c97a;}
+  .pub-title{font-size:.87rem;font-weight:600;color:var(--navy);line-height:1.45;margin-bottom:.2rem;}
+  .pub-title a{color:inherit;text-decoration:none;}
+  .pub-title a:hover{color:var(--accent);text-decoration:underline;}
+  .pub-authors{font-size:.78rem;color:var(--muted);line-height:1.5;}
+  .pub-authors strong{color:var(--slate);}
+  .pub-note{display:inline-block;font-size:.64rem;font-weight:600;padding:.1rem .35rem;border-radius:2px;margin-left:.35rem;vertical-align:middle;}
+  .n-oral{color:#7a3500;background:#fef0ea;border:1px solid #f0c09a;}
+  .n-best{color:#7a5500;background:var(--gold-light);border:1px solid #e8c97a;}
+  footer{background:var(--navy);color:rgba(255,255,255,.55);text-align:center;padding:2rem;font-size:.78rem;margin-top:2rem;}
+  footer a{color:rgba(255,255,255,.75);text-decoration:none;}
+  footer a:hover{color:#fff;}
+  .foot-nav{display:flex;justify-content:center;gap:1.5rem;margin-bottom:.8rem;}
+  @media(max-width:640px){
+    .stats-row{grid-template-columns:1fr 1fr;}
+    .pub-item{grid-template-columns:1fr;}
+    .funding-item{grid-template-columns:1fr;}
+    .pub-tag{display:inline-block;margin-bottom:.3rem;}
   }
 </style>
 </head>
@@ -129,10 +97,10 @@
 
 <div class="page-header">
   <div class="page-header-inner">
-    <div class="page-eyebrow">Research Output</div>
+    <div class="page-eyebrow">Research Output — Entire Period</div>
     <h1 class="page-title">Funding &amp; Publications</h1>
     <p class="page-intro">
-      Full publication list on <a href="https://scholar.google.com/citations?hl=en&user=L0CbApYAAAAJ&sortby=pubdate" target="_blank">Google Scholar</a> &nbsp;·&nbsp;
+      Full list on <a href="https://scholar.google.com/citations?hl=en&user=L0CbApYAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Google Scholar</a> &nbsp;·&nbsp;
       <a href="https://dblp.org/pid/15/6233.html" target="_blank">DBLP</a> &nbsp;·&nbsp;
       <a href="https://openreview.net/profile?id=~Dongxiao_Zhu1" target="_blank">OpenReview</a>
     </p>
@@ -141,84 +109,135 @@
 
 <div class="main">
 
-  <!-- STATS -->
   <div class="stats-row">
-    <div class="stat-card">
-      <div class="stat-num">100+</div>
-      <div class="stat-label">Peer-reviewed publications</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num">~$12M</div>
-      <div class="stat-label">Total research funding</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num">~$9M</div>
-      <div class="stat-label">As Principal Investigator</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num">#20</div>
-      <div class="stat-label">MS AI program ranked nationally (TechGuide)</div>
-    </div>
+    <div class="stat-card"><div class="stat-num">100+</div><div class="stat-label">Peer-reviewed publications</div></div>
+    <div class="stat-card"><div class="stat-num">~$12M</div><div class="stat-label">Total research funding</div></div>
+    <div class="stat-card"><div class="stat-num">~$9M</div><div class="stat-label">As Principal Investigator</div></div>
+    <div class="stat-card"><div class="stat-num">#20</div><div class="stat-label">MS AI program nationally (TechGuide)</div></div>
+  </div>
+
+  <div class="jump-nav">
+    <a class="jump-link" href="#funding">Federal Funding</a>
+    <a class="jump-link" href="#preprints">Preprints</a>
+    <a class="jump-link" href="#foundational">Foundational AI / ML</a>
+    <a class="jump-link" href="#use-inspired">Use-Inspired AI</a>
+    <a class="jump-link" href="#bioinformatics">Bioinformatics</a>
   </div>
 
   <!-- FUNDING -->
-  <section class="section">
-    <h2 class="section-title">Selected Federal Funding</h2>
+  <section class="section" id="funding">
+    <h2 class="section-title">Selected Federal Funding <span style="font-size:.8rem">(Total ~$12M · As PI ~$9M)</span></h2>
     <div class="funding-list">
 
       <div class="funding-item">
-        <span class="funding-role role-pi">MPI</span>
+        <span class="funding-role role-pi">Sole PI</span>
         <div>
-          <div class="funding-title"><a href="#">NIH/R61/R33EY037504: VisionWay: Accessibility-aware Path Selection for Wayfinding</a></div>
-          <div class="funding-meta">09/01/2025 – 08/31/2030 &nbsp;·&nbsp; $2,700,000 &nbsp;·&nbsp; 25% effort</div>
-        </div>
-      </div>
-
-      <div class="funding-item">
-        <span class="funding-role role-pi">PI</span>
-        <div>
-          <div class="funding-title"><a href="#">NSF/IIS 2504264: Collaborative Research: III: Medium: Advancing Large Language Model Unlearning — Foundations and Applications</a></div>
-          <div class="funding-meta">10/01/2025 – 09/30/2029 &nbsp;·&nbsp; $800,000 &nbsp;·&nbsp; 33% effort</div>
-        </div>
-      </div>
-
-      <div class="funding-item">
-        <span class="funding-role role-co-i">Co-I</span>
-        <div>
-          <div class="funding-title"><a href="#">HRSA/5U1QHP53070-02-00: A.G.R.E.E.D. — Applied Gerontology Research and Education to Eliminate Disparities (GWEP)</a></div>
-          <div class="funding-meta">07/01/2024 – 06/30/2029 &nbsp;·&nbsp; $3,000,000 &nbsp;·&nbsp; 10% effort</div>
+          <div class="funding-title"><a href="https://nairrpilot.org/projects/awarded?_requestNumber=NAIRR260014" target="_blank">NAIRR/NSF: Aligning Large Reasoning Models via Safety-aware Post-Training</a></div>
+          <div class="funding-meta">2026 &nbsp;·&nbsp; $10,000 token credit &amp; 25,000 GPU hours &nbsp;·&nbsp; 100%</div>
         </div>
       </div>
 
       <div class="funding-item">
         <span class="funding-role role-pi">MPI</span>
         <div>
-          <div class="funding-title"><a href="https://reporter.nih.gov/search/36NiNjad1UOcKxBGGwj_zg/projects">NIH/R33HD105610: SPITS-MISC — Severity Predictors Integrating salivary Transcriptomics with Multi neural network Intelligence in SARS-CoV2 in Children</a></div>
-          <div class="funding-meta">01/01/2023 – 12/31/2025 &nbsp;·&nbsp; $1,449,684 &nbsp;·&nbsp; 33% effort</div>
+          <div class="funding-title"><a href="https://reporter.nih.gov/search/K3RY7leNekmjAHVsBdD9sg/projects" target="_blank">NIH/R61/R33EY037504: VisionWay: Accessibility-aware Path Selection for Wayfinding</a></div>
+          <div class="funding-meta">09/01/2025 – 08/31/2030 &nbsp;·&nbsp; $2,700,000 &nbsp;·&nbsp; 25%</div>
         </div>
       </div>
 
       <div class="funding-item">
         <span class="funding-role role-pi">PI</span>
         <div>
-          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2235225">NSF/ITE 2235225: Convergence Accelerator Track H — Leveraging Human-Centered AI Microtransit to Ameliorate Spatiotemporal Mismatch between Housing and Employment for Persons with Disabilities</a></div>
-          <div class="funding-meta">12/15/2022 – 11/30/2024 &nbsp;·&nbsp; $613,621 &nbsp;·&nbsp; 25% effort</div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/show-award?AWD_ID=2504264" target="_blank">NSF/IIS 2504264: Collaborative Research: III: Medium: Advancing Large Language Model Unlearning — Foundations and Applications</a></div>
+          <div class="funding-meta">10/01/2025 – 09/30/2029 &nbsp;·&nbsp; $800,000 &nbsp;·&nbsp; 33%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-coi">Co-I</span>
+        <div>
+          <div class="funding-title"><a href="https://www.hrsa.gov/grants/find-funding/HRSA-24-018" target="_blank">HRSA/5U1QHP53070-02-00: A.G.R.E.E.D. — Applied Gerontology Research and Education to Eliminate Disparities (GWEP)</a></div>
+          <div class="funding-meta">07/01/2024 – 06/30/2029 &nbsp;·&nbsp; $3,000,000 &nbsp;·&nbsp; 10%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-pi">MPI</span>
+        <div>
+          <div class="funding-title"><a href="https://reporter.nih.gov/search/36NiNjad1UOcKxBGGwj_zg/projects" target="_blank">NIH/R33HD105610: SPITS-MISC — Severity Predictors Integrating salivary Transcriptomics and proteomics with Multi Neural Network Intelligence in SARS-CoV2 in Children</a></div>
+          <div class="funding-meta">01/01/2023 – 12/31/2025 &nbsp;·&nbsp; $1,449,684 &nbsp;·&nbsp; 33%</div>
         </div>
       </div>
 
       <div class="funding-item">
         <span class="funding-role role-pi">PI</span>
         <div>
-          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2211897">NSF/IIS 2211897: Collaborative Research HCC: Understanding Online-to-Offline Sexual Violence through Data Donation from Users</a></div>
-          <div class="funding-meta">10/01/2022 – 09/30/2026 &nbsp;·&nbsp; $600,000 &nbsp;·&nbsp; 33% effort</div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2235225&HistoricalAwards=false" target="_blank">NSF/ITE 2235225: Convergence Accelerator Track H — Leveraging Human-Centered AI Microtransit to Ameliorate Spatiotemporal Mismatch between Housing and Employment for Persons with Disabilities</a></div>
+          <div class="funding-meta">12/15/2022 – 11/30/2024 &nbsp;·&nbsp; $613,621 &nbsp;·&nbsp; 25%</div>
         </div>
       </div>
 
       <div class="funding-item">
         <span class="funding-role role-pi">PI</span>
         <div>
-          <div class="funding-title"><a href="#">NIH/R21LM010137: A new informatics paradigm for reconstructing signaling pathways in human disease</a></div>
-          <div class="funding-meta">09/2009 – 08/2012 &nbsp;·&nbsp; $499,823 &nbsp;·&nbsp; Sole PI</div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2211897&HistoricalAwards=false" target="_blank">NSF/IIS 2211897: Collaborative Research HCC: Small: Understanding Online-to-Offline Sexual Violence through Data Donation from Users</a></div>
+          <div class="funding-meta">10/01/2022 – 09/30/2026 &nbsp;·&nbsp; $600,000 &nbsp;·&nbsp; 33%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-pi">MPI</span>
+        <div>
+          <div class="funding-title"><a href="https://reporter.nih.gov/search/36NiNjad1UOcKxBGGwj_zg/projects" target="_blank">NIH/R61HD105610: SPITS-MISC (Phase I) — Severity Predictors Integrating salivary Transcriptomics with Multi Neural Network Intelligence in SARS-CoV2 in Children</a></div>
+          <div class="funding-meta">01/01/2021 – 12/31/2024 &nbsp;·&nbsp; $1,433,469 &nbsp;·&nbsp; 33%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-pi">PI</span>
+        <div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2043611&HistoricalAwards=false" target="_blank">NSF/CNS 2043611: SCC-CIVIC-PG Track A — Leveraging AI-assist Microtransit to Ameliorate Spatiotemporal Mismatch between Housing and Employment</a></div>
+          <div class="funding-meta">01/01/2021 – 06/30/2021 &nbsp;·&nbsp; $49,892 &nbsp;·&nbsp; 25%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-copi">Co-PI</span>
+        <div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1637312" target="_blank">NSF/CCF 1637312: S&amp;CC — Promoting a Healthier Urban Community: Prioritization of Risk Factors for the Prevention and Treatment of Pediatric Obesity</a></div>
+          <div class="funding-meta">09/01/2016 – 08/31/2018 &nbsp;·&nbsp; $199,996 &nbsp;·&nbsp; 33%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-sp">Sr. Personnel</span>
+        <div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1724227&HistoricalAwards=false" target="_blank">NSF/IIS 1724227: S&amp;AS: INT — Autonomous Battery Operating System (ABOS): Efficient, Safe, and Secure Battery System Management</a></div>
+          <div class="funding-meta">09/01/2017 – 08/31/2021 &nbsp;·&nbsp; $1,249,998 &nbsp;·&nbsp; 10%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-pi">PI</span>
+        <div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1451316&ActiveAwards=true&ExpiredAwards=true" target="_blank">NSF/CCF 1451316: EAGER — A Novel Algorithmic Framework for Discovering Subnetworks from Big Biological Data</a></div>
+          <div class="funding-meta">08/15/2014 – 08/14/2017 &nbsp;·&nbsp; $174,998 &nbsp;·&nbsp; 100%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-pi">Sole PI</span>
+        <div>
+          <div class="funding-title"><a href="https://reporter.nih.gov/project-details/8386753" target="_blank">NIH/R21LM010137: A New Informatics Paradigm for Reconstructing Signaling Pathways in Human Disease</a></div>
+          <div class="funding-meta">09/2009 – 08/2012 &nbsp;·&nbsp; $499,823 &nbsp;·&nbsp; 100%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-copi">Co-PI</span>
+        <div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0939108" target="_blank">NSF/CCF 0939108: CPATH — A Verification Based Learning Model that Enriches CS and Related Undergraduate Programs</a></div>
+          <div class="funding-meta">10/01/2009 – 09/30/2012 &nbsp;·&nbsp; $300,000 &nbsp;·&nbsp; 25%</div>
         </div>
       </div>
 
@@ -226,133 +245,597 @@
   </section>
 
   <!-- PREPRINTS -->
-  <section class="section">
-    <h2 class="section-title">Selected Publications</h2>
-
-    <div class="pub-group">
-      <div class="pub-group-title">Preprints &amp; Under Review (student first author)</div>
-      <div class="pub-list">
-        <div class="pub-item">
-          <span class="pub-tag preprint">arXiv</span>
-          <div>
-            <div class="pub-title"><a href="#">Alignment of LRMs via Counter-Aligned Few-Shot Conversation Exposure</a></div>
-            <div class="pub-authors">Zhou, X., Zade, S.Z. and <strong>Zhu, D.</strong> — Under Review, 2026</div>
-          </div>
+  <section class="section" id="preprints">
+    <h2 class="section-title">Preprints <span>(student as first author)</span></h2>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="pub-tag pre">Under Review</span>
+        <div>
+          <div class="pub-title"><a href="https://openreview.net/attachment?id=kFJH5rpVJd&name=pdf" target="_blank">Alignment of LRMs via Counter-Aligned Few-Shot Conversation Exposure</a></div>
+          <div class="pub-authors">Zhou, X., Zade, S.Z. and <strong>Zhu, D.</strong> (2026)</div>
         </div>
-        <div class="pub-item">
-          <span class="pub-tag preprint">arXiv</span>
-          <div>
-            <div class="pub-title"><a href="https://arxiv.org/abs/2503.23534">BiPVL-Seg: Bidirectional Progressive Vision-Language Fusion with Global-Local Alignment for Medical Image Segmentation</a></div>
-            <div class="pub-authors">Sultan, R.I., Zhu, H., Li, C. and <strong>Zhu, D.</strong> — 2025</div>
-          </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-tag pre">arXiv</span>
+        <div>
+          <div class="pub-title"><a href="https://arxiv.org/pdf/2503.23534" target="_blank">BiPVL-Seg: Bidirectional Progressive Vision-Language Fusion with Global-Local Alignment for Medical Image Segmentation</a></div>
+          <div class="pub-authors">Sultan, R.I., Zhu, H., Li, C. and <strong>Zhu, D.</strong> — arXiv:2503.23534, 2025</div>
         </div>
-        <div class="pub-item">
-          <span class="pub-tag preprint">arXiv</span>
-          <div>
-            <div class="pub-title">FedDRO: Federated Compositional Optimization for Distributionally Robust Learning</div>
-            <div class="pub-authors">Khanduri, P., Li, C., Sultan, R., Qiang, Y., Kliewer, J. and <strong>Zhu, D.</strong></div>
-          </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-tag pre">arXiv</span>
+        <div>
+          <div class="pub-title"><a href="https://arxiv.org/abs/2402.13459" target="_blank">Learning to Poison Large Language Models During Instruction Tuning</a></div>
+          <div class="pub-authors">Qiang, Y., Zhou, X., Zare Zade, S., Rosani, A., Zytko, D. and <strong>Zhu, D.</strong></div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-tag pre">arXiv</span>
+        <div>
+          <div class="pub-title"><a href="https://arxiv.org/pdf/2311.09948.pdf" target="_blank">Hijacking Large Language Models via Adversarial In-Context Learning</a></div>
+          <div class="pub-authors">Qiang, Y., Zhou, X. and <strong>Zhu, D.</strong></div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-tag pre">arXiv</span>
+        <div>
+          <div class="pub-title"><a href="https://arxiv.org/abs/2311.12652" target="_blank">FedDRO: Federated Compositional Optimization for Distributionally Robust Learning</a></div>
+          <div class="pub-authors">Khanduri, P., Li, C., Sultan, R., Qiang, Y., Kliewer, J. and <strong>Zhu, D.</strong></div>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- FOUNDATIONAL AI / ML -->
+  <section class="section" id="foundational">
+    <h2 class="section-title">Foundational AI / Machine Learning Research <span>(student as first author)</span></h2>
 
     <div class="pub-group">
-      <div class="pub-group-title">Foundational AI / Machine Learning (2025–2026)</div>
+      <div class="pub-group-title">2026 <span class="count">3</span></div>
       <div class="pub-list">
         <div class="pub-item">
-          <span class="pub-tag">CVPR-26</span>
+          <span class="pub-tag top">CVPR-26</span>
           <div>
-            <div class="pub-title"><a href="https://arxiv.org/abs/2603.10703">WalkGPT: Grounded Vision–Language Conversation with Depth-Aware Segmentation for Pedestrian Navigation</a></div>
+            <div class="pub-title"><a href="https://arxiv.org/abs/2603.10703" target="_blank">WalkGPT: Grounded Vision–Language Conversation with Depth-Aware Segmentation for Pedestrian Navigation</a></div>
             <div class="pub-authors">Sultan, R., Zhu, H., Li, C., Khanduri, P., Brocanelli, M. and <strong>Zhu, D.</strong></div>
           </div>
         </div>
         <div class="pub-item">
-          <span class="pub-tag">ICLR-26</span>
+          <span class="pub-tag top">ICLR-26</span>
           <div>
-            <div class="pub-title"><a href="https://arxiv.org/pdf/2603.01285">Attention Smoothing is All You Need for Unlearning</a></div>
+            <div class="pub-title"><a href="https://arxiv.org/pdf/2603.01285" target="_blank">Attention Smoothing Is All You Need For Unlearning</a></div>
             <div class="pub-authors">Zade, S.Z., Zhou, X., Liu, S. and <strong>Zhu, D.</strong></div>
           </div>
         </div>
         <div class="pub-item">
-          <span class="pub-tag">AAAI-26</span>
+          <span class="pub-tag top">AAAI-26</span>
           <div>
-            <div class="pub-title"><a href="https://arxiv.org/pdf/2506.03142">Not All Tokens Are Meant to Be Forgotten</a> <span class="oral-badge">Oral</span></div>
+            <div class="pub-title"><a href="https://arxiv.org/abs/2506.03142" target="_blank">Not All Tokens Are Meant to Be Forgotten</a> <span class="pub-note n-oral">Oral</span></div>
             <div class="pub-authors">Zhou, X., Qiang, Y., Zade, S.Z., Zytko, D., Khanduri, P. and <strong>Zhu, D.</strong></div>
-          </div>
-        </div>
-        <div class="pub-item">
-          <span class="pub-tag">ECAI-25</span>
-          <div>
-            <div class="pub-title"><a href="https://arxiv.org/pdf/2505.03392">Automatic Calibration for Membership Inference Attack on Large Language Models</a></div>
-            <div class="pub-authors">Zade, S.Z., Qiang, Y., Zhou, X., Zhu, H., Roshani, M.A., Khanduri, P. and <strong>Zhu, D.</strong></div>
-          </div>
-        </div>
-        <div class="pub-item">
-          <span class="pub-tag">ECAI-25</span>
-          <div>
-            <div class="pub-title"><a href="https://arxiv.org/pdf/2311.11319">GeoSAM: Fine-tuning SAM with Sparse and Dense Visual Prompting for Automated Segmentation of Mobility Infrastructure</a></div>
-            <div class="pub-authors">Sultan, R., Li, C., Zhu, H., Khanduri, P., Brocanelli, M. and <strong>Zhu, D.</strong></div>
-          </div>
-        </div>
-        <div class="pub-item">
-          <span class="pub-tag">CSCW-25</span>
-          <div>
-            <div class="pub-title">Collective Consent: Who Needs to Consent to the Donation of Data Representing Multiple People?</div>
-            <div class="pub-authors">Walquist, E., Datey, I., Zheng, W., Zhou, X., Berishaj, K., McDonald, M., Parkhill, M., <strong>Zhu, D.</strong> and Zytko, D.</div>
-          </div>
-        </div>
-        <div class="pub-item">
-          <span class="pub-tag">WACV-25</span>
-          <div>
-            <div class="pub-title">MulModSeg: Enhancing Unpaired Multi-Modal Medical Image Segmentation with Modality-Conditioned Text Embedding and Alternating Training</div>
-            <div class="pub-authors">Li, C., Zhu, H., Sultan, R., Khanduri, P., Qiang, Y., Chetty, I., Thind, K. and <strong>Zhu, D.</strong></div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="pub-group">
-      <div class="pub-group-title">Selected Earlier Work (2022–2024)</div>
+      <div class="pub-group-title">2025 <span class="count">6</span></div>
       <div class="pub-list">
         <div class="pub-item">
-          <span class="pub-tag">ECCV-24</span>
+          <span class="pub-tag mid">ECAI-25</span>
           <div>
-            <div class="pub-title"><a href="https://arxiv.org/abs/2301.13803">Fairness-aware Vision Transformer via Debiased Self-Attention</a></div>
-            <div class="pub-authors">Qiang, Y. and <strong>Zhu, D.</strong></div>
+            <div class="pub-title"><a href="https://arxiv.org/pdf/2505.03392" target="_blank">Automatic Calibration for Membership Inference Attack on Large Language Models</a></div>
+            <div class="pub-authors">Zade, S.Z., Qiang, Y., Zhou, X., Zhu, H., Roshani, M.A., Khanduri, P. and <strong>Zhu, D.</strong></div>
           </div>
         </div>
         <div class="pub-item">
-          <span class="pub-tag">AAAI-24</span>
+          <span class="pub-tag mid">ECAI-25</span>
           <div>
-            <div class="pub-title"><a href="https://arxiv.org/pdf/2312.13630.pdf">MFABA: A More Faithful and Accelerated Boundary-based Attribution Method for Deep Neural Networks</a></div>
-            <div class="pub-authors">Multiple authors and <strong>Zhu, D.</strong></div>
+            <div class="pub-title"><a href="https://arxiv.org/pdf/2311.11319" target="_blank">GeoSAM: Fine-tuning SAM with Sparse and Dense Visual Prompting for Automated Segmentation of Mobility Infrastructure</a></div>
+            <div class="pub-authors">Sultan, R., Li, C., Zhu, H., Khanduri, P., Brocanelli, M. and <strong>Zhu, D.</strong></div>
           </div>
         </div>
         <div class="pub-item">
-          <span class="pub-tag">MICCAI-23</span>
+          <span class="pub-tag mid">CSCW-25</span>
           <div>
-            <div class="pub-title"><a href="https://arxiv.org/pdf/2210.03189.pdf">FocalUNETR: A Focal Transformer for Boundary-aware Prostate Segmentation using CT Images</a></div>
-            <div class="pub-authors">Li, C. and <strong>Zhu, D.</strong></div>
+            <div class="pub-title"><a href="https://deepblue.lib.umich.edu/bitstream/handle/2027.42/196706/CSCW_2025_Walquist_preprint_updated.pdf" target="_blank">Collective Consent: Who Needs to Consent to the Donation of Data Representing Multiple People?</a></div>
+            <div class="pub-authors">Walquist, E., Datey, I., Zheng, W., Zhou, X., Berishaj, K., McDonald, M., Parkhill, M., <strong>Zhu, D.</strong> and Zytko, D.</div>
           </div>
         </div>
         <div class="pub-item">
-          <span class="pub-tag">NeurIPS-22</span>
+          <span class="pub-tag mid">IJCNN-25</span>
           <div>
-            <div class="pub-title"><a href="https://openreview.net/pdf?id=cA8Zor8wFr5">AttCAT: Explaining Transformers via Attentive Class Activation Tokens</a></div>
-            <div class="pub-authors">Qiang, Y., Pan, D., Li, C., Li, X., Jang, R. and <strong>Zhu, D.</strong></div>
+            <div class="pub-title"><a href="https://arxiv.org/pdf/2309.08035" target="_blank">Interpretability-Aware Vision Transformer</a></div>
+            <div class="pub-authors">Qiang, Y., Li, C., Khanduri, P. and <strong>Zhu, D.</strong></div>
           </div>
         </div>
         <div class="pub-item">
-          <span class="pub-tag">IJCAI-22</span>
+          <span class="pub-tag mid">WACV-25</span>
           <div>
-            <div class="pub-title">Counterfactual Interpolation Augmentation (CIA): A Unified Approach to Enhance Fairness and Explainability of DNN</div>
-            <div class="pub-authors">Qiang, Y. and <strong>Zhu, D.</strong></div>
+            <div class="pub-title"><a href="https://arxiv.org/pdf/2411.15576" target="_blank">MulModSeg: Enhancing Unpaired Multi-Modal Medical Image Segmentation with Modality-Conditioned Text Embedding and Alternating Training</a></div>
+            <div class="pub-authors">Li, C., Zhu, H., Sultan, R., Khanduri, P., Qiang, Y., Chetty, I., Thind, K. and <strong>Zhu, D.</strong></div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">WACV-25</span>
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/pdf/2308.14936" target="_blank">AutoProSAM: Automated Prompting SAM for 3D Multi-Organ Segmentation</a></div>
+            <div class="pub-authors">Li, C., Khanduri, P., Qiang, Y., Sultan, R., Chetty, I. and <strong>Zhu, D.</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-group-title">2024 <span class="count">3</span></div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-tag top">ECCV-24</span>
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/abs/2301.13803" target="_blank">Fairness-aware Vision Transformer via Debiased Self-Attention</a></div>
+            <div class="pub-authors">Qiang, Y., Li, C., Khanduri, P. and <strong>Zhu, D.</strong> — Accept rate: 2,395/8,585 = 27.9%</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">TheWebConf-24</span>
+          <div>
+            <div class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3589334.3645676" target="_blank">Benchmark and Neural Architecture for Conversational Entity Retrieval from a Knowledge Graph</a></div>
+            <div class="pub-authors">Zamiri, M., Qiang, Y., Nikolaev, F., <strong>Zhu, D.</strong> and Kotov, A. — Accept rate: 806/4,028 = 20.2%</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">CHI-24</span>
+          <div>
+            <div class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3613904.3642045" target="_blank">"It's not what we were trying to get at, but I think maybe it should be": Learning how to do trauma-informed design with a data donation platform for online dating sexual violence</a></div>
+            <div class="pub-authors">Zheng, W., Walquist, E., Datey, I., Zhou, X., Berishaj, K., Mcdonald, M., Parkhill, M., <strong>Zhu, D.</strong> and Zytko, D. — Accept rate: 1,060/4,028 = 26.3%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-group-title">2023 <span class="count">4</span></div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-tag top">AAAI-24</span>
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/abs/2312.13630" target="_blank">MFABA: A More Faithful and Accelerated Boundary-based Attribution Method for Deep Neural Networks</a></div>
+            <div class="pub-authors">Zhu, Z., Chen, H., Zhang, J., Wang, X., Jin, Z., Xue, M., <strong>Zhu, D.</strong> and Choo, K.K.R. — Accept rate: 2,342/12,100 = 23.75%</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag top">MICCAI-23</span>
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/pdf/2210.03189.pdf" target="_blank">FocalUNETR: A Focal Transformer for Boundary-aware Segmentation of CT Images</a></div>
+            <div class="pub-authors">Li, C., Qiang, Y., Sultan, R., Bagher-Ebadian, P., Khanduri, V., Chetty, I.J. and <strong>Zhu, D.</strong> — Accept rate: 740/2,250 = 32%</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag top">IJCAI-23</span>
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/pdf/2301.06989.pdf" target="_blank">Negative Flux Aggregation to Estimate Feature Attributions</a></div>
+            <div class="pub-authors">Li, X., Pan, D., Li, C., Qiang, Y. and <strong>Zhu, D.</strong> — Accept rate: 685/4,566 = 15%</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag top">AAAI-23</span>
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/abs/2211.13332" target="_blank">Learning Compact Features via In-Training Representation Alignment</a></div>
+            <div class="pub-authors">Li, X., Li, X., Pan, D., Qiang, Y. and <strong>Zhu, D.</strong> — Accept rate: 1,721/8,777 = 19.6%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-group-title">Workshop 2023 <span class="count">1</span></div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-tag wks">AdvML@ICML-23</span>
+          <div>
+            <div class="pub-title"><a href="https://openreview.net/pdf?id=a7pK9UK4kB" target="_blank">Proximal Composite Optimization for Distributionally Robust Learning</a></div>
+            <div class="pub-authors">Khanduri, P., Li, C., Sultan, R., Qiang, Y. and <strong>Zhu, D.</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-group-title">2022 <span class="count">5</span></div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-tag top">NeurIPS-22</span>
+          <div>
+            <div class="pub-title"><a href="https://openreview.net/pdf?id=cA8Zor8wFr5" target="_blank">AttCAT: Explaining Transformers via Attentive Class Activation Tokens</a></div>
+            <div class="pub-authors">Qiang, Y., Pan, D., Li, C., Li, X., Jang, R. and <strong>Zhu, D.</strong> — Accept rate: 2,665/10,411 = 25.6%</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag top">IJCAI-22</span>
+          <div>
+            <div class="pub-title"><a href="https://www.ijcai.org/proceedings/2022/0103.pdf" target="_blank">Counterfactual Interpolation Augmentation (CIA): A Unified Approach to Enhance Fairness and Explainability of DNN</a></div>
+            <div class="pub-authors">Qiang, Y., Li, C., Brocanelli, M. and <strong>Zhu, D.</strong> — Accept rate: 681/4,535 = 15%</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">ECML-22</span>
+          <div>
+            <div class="pub-title"><a href="https://2022.ecmlpkdd.org/wp-content/uploads/2022/09/sub_733.pdf" target="_blank">Coupling User Preference with External Rewards to Enable Driver-centered and Resource-aware EV Charging Recommendation</a></div>
+            <div class="pub-authors">Li, C., Dong, Z., Fisher, N. and <strong>Zhu, D.</strong> — Accept rate: 242/932 = 26%</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">IJCNN-22</span>
+          <div>
+            <div class="pub-title"><a href="assets/files/IJCNN2022Tiny.pdf" target="_blank">Tiny RNN Model with Certified Robustness for Text Classification</a> <span class="pub-note n-oral">Oral</span></div>
+            <div class="pub-authors">Qiang, Y., Supriya, T.S., Kumar, Brocanelli, M. and <strong>Zhu, D.</strong></div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag wks">AdvML@ICML-22</span>
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/pdf/2209.04326.pdf" target="_blank">Saliency Guided Adversarial Training for Tackling Generalization Gap with Applications to Medical Imaging Classification</a></div>
+            <div class="pub-authors">Li, X., Qiang, Y., Li, C., Liu, S. and <strong>Zhu, D.</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-group-title">2021 <span class="count">3</span></div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-tag top">IJCAI-21</span>
+          <div>
+            <div class="pub-title"><a href="https://www.ijcai.org/proceedings/2021/0396.pdf" target="_blank">Explaining Deep Neural Network Models with Adversarial Gradient Integration</a></div>
+            <div class="pub-authors">Pan, D., Li, X. and <strong>Zhu, D.</strong> — Accept rate: 587/4,204 = 13.9%</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag top">AAAI-21</span>
+          <div>
+            <div class="pub-title"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/17030" target="_blank">Improving Adversarial Robustness via Probabilistically Compact Loss with Logit Constraints</a></div>
+            <div class="pub-authors">Li, X., Li, X., Pan, D. and <strong>Zhu, D.</strong> — Accept rate: 1,692/7,911 = 21.4%</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">DMKD</span>
+          <div>
+            <div class="pub-title"><a href="https://link.springer.com/article/10.1007/s10618-021-00746-8" target="_blank">Tackling Multiple Ordinal Regression Problems: Sparse and Deep Multi-task Learning Approaches</a></div>
+            <div class="pub-authors">Wang, L. and <strong>Zhu, D.</strong> — Data Mining and Knowledge Discovery, 2021</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-group-title">2020 <span class="count">3</span></div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-tag top">IJCAI-20</span>
+          <div>
+            <div class="pub-title"><a href="https://www.ijcai.org/proceedings/2020/0373.pdf" target="_blank">Explainable Recommendation via Interpretable Feature Mapping and Evaluating Explainability</a></div>
+            <div class="pub-authors">Pan, D., Li, X., Li, X. and <strong>Zhu, D.</strong> — Accept rate: 592/4,717 = 12.6%</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag top">AAAI-20</span>
+          <div>
+            <div class="pub-title"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/5907" target="_blank">On the Learning Behavior of Logistic and Softmax Losses for Deep Neural Networks</a></div>
+            <div class="pub-authors">Li, X., Li, X., Pan, D. and <strong>Zhu, D.</strong> — Accept rate: 1,591/7,737 = 20.6%</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">IJCNN-20</span>
+          <div>
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/9207426" target="_blank">Toward Tag-free Aspect Based Sentiment Analysis: A Multiple Attention Network Approach</a></div>
+            <div class="pub-authors">Qiang, Y., Li, X. and <strong>Zhu, D.</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-group-title">2017–2018 <span class="count">4</span></div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-tag mid">ICDM-17</span>
+          <div>
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/8215521" target="_blank">Multi-task Survival Analysis</a></div>
+            <div class="pub-authors">Wang, L., Li, Y., Zhou, J., <strong>Zhu, D.</strong> and Ye, J. — Accept rate: 72/778 = 9.25%</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Patt. Recog. Lett.</span>
+          <div>
+            <div class="pub-title"><a href="https://dl.acm.org/doi/10.1016/j.patrec.2018.02.021" target="_blank">Robust Feature Selection via l<sub>2,1</sub>-norm in Finite Mixture of Regression</a></div>
+            <div class="pub-authors">Li, X. and <strong>Zhu, D.</strong> — Pattern Recognition Letters, 108, 2018, pp 15–22</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Stat. Anal. Data Min.</span>
+          <div>
+            <div class="pub-title"><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/sam.11369" target="_blank">Clustering Over-Dispersed Data with Mixed Feature Types</a></div>
+            <div class="pub-authors">Wang, L., <strong>Zhu, D.</strong> and Dong, M. — Statistical Analysis and Data Mining, 2018;11:55–65</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Patt. Recog. Lett.</span>
+          <div>
+            <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S0167865517304087" target="_blank">Multinomial Classification with Class-Conditional Overlapping Sparse Feature Groups</a></div>
+            <div class="pub-authors">Li, X., <strong>Zhu, D.</strong> and Dong, M. — Pattern Recognition Letters, 101, 2018, pp 37–43</div>
           </div>
         </div>
       </div>
     </div>
 
   </section>
+
+  <!-- USE-INSPIRED AI -->
+  <section class="section" id="use-inspired">
+    <h2 class="section-title">Use-Inspired AI Research <span>(student as first author)</span></h2>
+
+    <div class="pub-group">
+      <div class="pub-group-title">Health &amp; Medical Imaging <span class="count">12</span></div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-tag top">MIDL-26</span>
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/abs/2512.22425" target="_blank">FluenceFormer: Transformer-Driven Multi-Beam Fluence Map Regression for Radiotherapy Planning</a></div>
+            <div class="pub-authors">Mgboh, U., Sultan, R.I., Kim, J., Thind, K. and <strong>Zhu, D.</strong></div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">JMIR AI</span>
+          <div>
+            <div class="pub-title"><a href="https://ai.jmir.org/2025/1/e67363/" target="_blank">Generative Large Language Model—Powered Conversational AI App for Personalized Risk Assessment: Case Study in COVID-19</a></div>
+            <div class="pub-authors">Roshani, M., Zhou, X., Qiang, Y., Suresh, S., Hicks, S., Sethuraman, U. and <strong>Zhu, D.</strong> — JMIR AI 2025;4:e67363</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Cancer</span>
+          <div>
+            <div class="pub-title"><a href="https://acsjournals.onlinelibrary.wiley.com/doi/10.1002/cncr.34827" target="_blank">ChatGPT — A Promising Generative AI Tool and its Implications on Cancer Care</a></div>
+            <div class="pub-authors">Uprety, D., <strong>Zhu, D.</strong> and West, H. — Cancer, doi:10.1002/cncr.34827</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Small</span>
+          <div>
+            <div class="pub-title"><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/smll.202403242" target="_blank">Mechanical Evolution of Metastatic Cancer Cells in 3D Microenvironment</a></div>
+            <div class="pub-authors">Hilai, K., Grubich, D., Akrawi, M., Zhu, H., Zaghloul, R., Shi, C., Do, M., <strong>Zhu, D.</strong> and Zhang, J. — Small, 21(18), 2025</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Med. Physics</span>
+          <div>
+            <div class="pub-title"><a href="https://pubmed.ncbi.nlm.nih.gov/40275531/" target="_blank">Enhancing CT Image Segmentation Accuracy through Ensemble Loss Function Optimization</a></div>
+            <div class="pub-authors">Li, X., Sultan, R., Bagher, H.E., Kim, J., <strong>Zhu, D.</strong> and Chetty, I. — Medical Physics, 2025 Jul;52(7):e17848</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Med. Physics</span>
+          <div>
+            <div class="pub-title"><a href="https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.15982" target="_blank">An Uncertainty-aware Deep Learning Architecture with Outlier Mitigation for Prostate Gland Segmentation in Radiotherapy Treatment Planning</a></div>
+            <div class="pub-authors">Li, X., Bagher, H.E., Kim, J., <strong>Zhu, D.</strong> and Chetty, I. — Medical Physics, 2022</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">ISBI-21</span>
+          <div>
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/9433761" target="_blank">Defending against Adversarial Attacks on Medical Imaging AI System: Classification or Detection?</a></div>
+            <div class="pub-authors">Li, X., Pan, D. and <strong>Zhu, D.</strong></div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">BIBM-20</span>
+          <div>
+            <div class="pub-title"><a href="https://www.computer.org/csdl/proceedings-article/bibm/2020/09313217/1qmfVqaDpba" target="_blank">COVID-MobileXpert: On-Device COVID-19 Screening using Snapshots of Chest X-Ray</a></div>
+            <div class="pub-authors">Li, X., Li, C. and <strong>Zhu, D.</strong></div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">MIDL-20</span>
+          <div>
+            <div class="pub-title"><a href="https://openreview.net/pdf?id=otswIbmgYA" target="_blank">Vispi: Automatic Visual Perception and Interpretation of Chest X-rays</a></div>
+            <div class="pub-authors">Li, X., Cao, R. and <strong>Zhu, D.</strong></div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">AMIA-20</span>
+          <div>
+            <div class="pub-title"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7233047/" target="_blank">Predicting Clinical Outcomes with Patient Stratification via Deep Mixture Neural Networks</a> <span class="pub-note n-best">Best Student Paper</span></div>
+            <div class="pub-authors">Li, X., <strong>Zhu, D.*</strong> and Levy, P. — AMIA Summit on Clinical Research Informatics (*Corresponding)</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">ISBI-20</span>
+          <div>
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/9098628" target="_blank">Robust Detection of Adversarial Attacks on Medical Images</a></div>
+            <div class="pub-authors">Li, X. and <strong>Zhu, D.</strong></div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">ISBI-20</span>
+          <div>
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/9098606" target="_blank">Interpreting Age Effects of Human Fetal Brain from Spontaneous fMRI using Deep 3D Convolutional Neural Networks</a></div>
+            <div class="pub-authors">Li, X., Hect, J., Thompson, J. and <strong>Zhu, D.</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-group-title">Transportation &amp; Mobility <span class="count">1</span></div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-tag jnl">Trans. Res. Part D</span>
+          <div>
+            <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S1361920923000755" target="_blank">Time-Series Fuel Consumption Prediction Assessing Delay Impacts on Energy using Vehicular Trajectory</a></div>
+            <div class="pub-authors">Kabir, R., Remias, S., Wadell, J. and <strong>Zhu, D.</strong> — Transportation Research Part D, 2023</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-group-title">Electronic Health Records &amp; Precision Medicine <span class="count">6</span></div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-tag mid">BIBM-19</span>
+          <div>
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/8982940" target="_blank">Prioritization of Multi-Level Risk Factors for Obesity</a></div>
+            <div class="pub-authors">Wang, L., Dong, M., Towner, E. and <strong>Zhu, D.</strong></div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Exp. Syst. Appl.</span>
+          <div>
+            <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0957417418304949" target="_blank">A Deep Active Survival Analysis Approach for Precision Treatment Recommendations: Application in Prostate Cancer</a></div>
+            <div class="pub-authors">Nezhad, M.Z., Sadati, N., Yang, K. and <strong>Zhu, D.</strong> — Expert Systems with Applications, 2019</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">IEEE-BHI-18</span>
+          <div>
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/8333449" target="_blank">Obesity Risk Factors Ranking Using Multi-Task Learning</a></div>
+            <div class="pub-authors">Wang, L., <strong>Zhu, D.</strong>, Towner, E. and Dong, M.</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">BIBM-17</span>
+          <div>
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/8217755" target="_blank">Predictive Deep Network with Leveraging Clinical Measure as Auxiliary Task</a></div>
+            <div class="pub-authors">Li, X. and <strong>Zhu, D.</strong></div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">AMIA-17</span>
+          <div>
+            <div class="pub-title"><a href="https://pubmed.ncbi.nlm.nih.gov/28815129/" target="_blank">SDT: A Tree Method for Detecting Patient Subgroups with Personalized Risk Factors</a></div>
+            <div class="pub-authors">Li, X., <strong>Zhu, D.</strong>, Dong, M., Nezhad, M.Z. and Levy, P.</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag mid">IEEE BIBM-16</span>
+          <div>
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/7822569" target="_blank">SAFS: A Deep Feature Selection Approach for Precision Medicine</a></div>
+            <div class="pub-authors">Nezhad, M.Z., <strong>Zhu, D.</strong>, Li, X., Yang, C. and Levy, P.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- BIOINFORMATICS -->
+  <section class="section" id="bioinformatics">
+    <h2 class="section-title">Bioinformatics &amp; Computational Biology</h2>
+
+    <div class="pub-group">
+      <div class="pub-group-title">Journals <span class="count">10</span></div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-tag jnl">IJMS</span>
+          <div>
+            <div class="pub-title"><a href="https://www.mdpi.com/1422-0067/24/9/8175" target="_blank">Saliva microRNA Profile in Children with and without Severe SARS-CoV-2 Infection</a></div>
+            <div class="pub-authors">Hicks, S.D., <strong>Zhu, D.</strong>, Sullivan, R., Kannikeswaran, N., Meert, K., Chen, W., Suresh, S. and Sethuraman, U. — IJMS, 24(9), 2023</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Pediatric Res.</span>
+          <div>
+            <div class="pub-title"><a href="https://www.nature.com/articles/s41390-022-02206-5" target="_blank">Putting the 'mi' in omics: Discovering miRNA Biomarkers for Pediatric Precision Care</a></div>
+            <div class="pub-authors">Li, C., Sullivan, R., <strong>Zhu, D.</strong> and Hicks, S. — Pediatrics Research, 2022</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Quant. Biology</span>
+          <div>
+            <div class="pub-title"><a href="https://link.springer.com/article/10.1007/s40484-017-0109-2" target="_blank">Transcriptome Assembly Strategies for Precision Medicine</a></div>
+            <div class="pub-authors">Wang, L., Acharya, L., Bai, C. and <strong>Zhu, D.</strong> — Quantitative Biology, 2017</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Brief. Funct. Genomics</span>
+          <div>
+            <div class="pub-title"><a href="https://pubmed.ncbi.nlm.nih.gov/26476430/" target="_blank">An Overview of Bioinformatics Methods for Modeling Biological Pathways in Yeast</a></div>
+            <div class="pub-authors">Hou, J., Acharya, L., <strong>Zhu, D.</strong> and Chen, J. — Briefings in Functional Genomics, 15(2), 95–108, 2016</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">IEEE TNB</span>
+          <div>
+            <div class="pub-title"><a href="https://europepmc.org/article/med/25680210" target="_blank">An Event-Based Computational Framework for Comparing Transcriptomes</a></div>
+            <div class="pub-authors"><strong>Zhu, D.</strong>, Deng, N. and Bai, C. — IEEE Transaction on NanoBioScience, 2014</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">PLoS ONE</span>
+          <div>
+            <div class="pub-title"><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0068352" target="_blank">Detecting Splicing Variants from Non-Differentially Expressed Genes of Human Idiopathic Pulmonary Fibrosis</a></div>
+            <div class="pub-authors">Deng, N., Sanchez, C., Lasky, J. and <strong>Zhu, D.</strong> — PLoS ONE, 2013</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Nucleic Acids Res.</span>
+          <div>
+            <div class="pub-title"><a href="https://academic.oup.com/nar/article/41/3/1425/2903069" target="_blank">TEAK: Topological Enrichment Analysis frameworK for Detecting Activated Biological Subpathways</a></div>
+            <div class="pub-authors">Judeh, T., Johnson, C., Kumar, A. and <strong>Zhu, D.</strong> — Nucleic Acids Res., 2013</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Bioinformatics</span>
+          <div>
+            <div class="pub-title">Optimal Structural Inference of Signaling Pathways from Overlapping and Unordered Gene Sets</div>
+            <div class="pub-authors">Acharya, L., Judeh, T., Wang, G. and <strong>Zhu, D.</strong> — Bioinformatics, 28(4), 546–556, 2012</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">IEEE/ACM TCBB</span>
+          <div>
+            <div class="pub-title">GSGS: A Computational Framework for Reconstructing Signaling Pathways from Gene Sets</div>
+            <div class="pub-authors">Acharya, L., Judeh, T., Duan, Z., Rabbat, M. and <strong>Zhu, D.</strong> — IEEE/ACM TCBB, 9(2), 438–450, 2011</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Nucleic Acids Res.</span>
+          <div>
+            <div class="pub-title">Isoform-Level microRNA-155 Target Prediction using RNA-seq</div>
+            <div class="pub-authors">Deng, N., Puetter, A., Zhang, K., Johnson, K., Zhao, Z., Taylor, C., Flemington, E. and <strong>Zhu, D.</strong> — Nucleic Acids Res., 2011</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-group-title">Conference &amp; Technical Reports <span class="count">3</span></div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-tag mid">ACM BCB-13</span>
+          <div>
+            <div class="pub-title"><a href="https://dl.acm.org/doi/10.1145/2506583.2512361" target="_blank">Detecting Various Types of Differential Splicing Events using RNA-Seq Data</a></div>
+            <div class="pub-authors">Deng, N. and <strong>Zhu, D.</strong> — ACM Conference on Bioinformatics, 2013</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">IEEE/ACM TCBB</span>
+          <div>
+            <div class="pub-title">A Generalized Multivariate Approach to Pattern Discovery from Replicated and Incomplete Genome-Wide Measurements</div>
+            <div class="pub-authors"><strong>Zhu, D.</strong>, Acharya, L. and Zhang, H. — IEEE/ACM TCBB, 8(5), pp 1153–1169, 2011</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Src Code Bio Med</span>
+          <div>
+            <div class="pub-title">SAMMate: A GUI Tool for Processing Short Read Alignment Information in SAM/BAM Format <span style="font-size:.75rem;color:var(--muted)">(7,000+ downloads)</span></div>
+            <div class="pub-authors">Xu, G., Deng, N., Zhao, Z., Flemington, E.K. and <strong>Zhu, D.</strong> — Source Code for Biology and Medicine, 6:2, 2011</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
 </div>
 
 <footer>
