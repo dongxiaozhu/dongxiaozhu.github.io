@@ -1,125 +1,326 @@
 <!DOCTYPE html>
-<html  >
+<html lang="en">
 <head>
-  <!-- Site made with Mobirise Website Builder v6.0.6, https://mobirise.com -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v6.0.6, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
-  <meta name="description" content="">
-  
-  
-  <title>Funding</title>
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=JFNpby"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=JFNpby" type="text/css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funding — Dongxiao Zhu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0f2140;--navy-mid:#1e3a5f;--navy-light:#e8edf4;--gold:#c8932a;--gold-light:#fdf3e0;--slate:#4a5568;--muted:#718096;--border:#e2e6ec;--bg:#f8f9fb;--white:#ffffff;--text:#1a202c;--accent:#2563eb;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
 
-  
-  
-  
+  /* NAV */
+  nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;}
+  .nav-brand{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--navy);text-decoration:none;flex-shrink:0;}
+  .nav-links{display:flex;align-items:center;}
+  .nav-links a{text-decoration:none;font-size:.82rem;font-weight:500;color:var(--slate);letter-spacing:.04em;text-transform:uppercase;padding:0 1rem;height:56px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
+  .nav-links a:hover,.nav-links a.active{color:var(--navy);border-bottom-color:var(--gold);}
+  .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;width:40px;height:40px;flex-shrink:0;}
+  .hamburger span{display:block;height:2px;background:var(--navy);border-radius:2px;transition:all .25s;}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  /* PAGE HEADER */
+  .page-header{background:var(--white);border-bottom:1px solid var(--border);padding:2.5rem 2rem 2rem;}
+  .page-header-inner{max-width:960px;margin:0 auto;}
+  .page-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;}
+  .page-title{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);font-weight:600;}
+  .page-intro{font-size:.88rem;color:var(--slate);margin-top:.7rem;line-height:1.7;}
+  .page-intro a{color:var(--accent);text-decoration:none;}
+  .page-intro a:hover{text-decoration:underline;}
+
+  /* MAIN */
+  .main{max-width:960px;margin:0 auto;padding:3rem 2rem;}
+
+  /* STATS */
+  .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem;}
+  .stat-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.1rem 1.2rem;border-top:3px solid var(--navy-mid);}
+  .stat-num{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--navy);font-weight:600;}
+  .stat-label{font-size:.75rem;color:var(--muted);margin-top:.1rem;line-height:1.4;}
+
+  /* SECTION */
+  .section{margin-bottom:3rem;}
+  .section-title{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--navy);font-weight:600;margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+
+  /* FUNDING LIST */
+  .funding-list{display:flex;flex-direction:column;gap:.6rem;}
+  .funding-item{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:.9rem 1.1rem;display:grid;grid-template-columns:auto 1fr;gap:.85rem;align-items:baseline;}
+  .funding-role{font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:600;padding:.2rem .5rem;border-radius:2px;white-space:nowrap;letter-spacing:.04em;}
+  .role-pi{background:#0f2140;color:#fff;}
+  .role-copi{background:var(--navy-light);color:var(--navy-mid);border:1px solid #b8c8da;}
+  .role-coi{background:var(--bg);color:var(--slate);border:1px solid var(--border);}
+  .role-sp{background:#f0f0f0;color:#555;border:1px solid #ccc;}
+  .funding-title{font-size:.86rem;color:var(--text);font-weight:500;line-height:1.55;}
+  .funding-title a{color:var(--accent);text-decoration:none;}
+  .funding-title a:hover{text-decoration:underline;}
+  .funding-meta{font-size:.75rem;color:var(--muted);margin-top:.25rem;}
+
+  /* LEGEND */
+  .legend{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;}
+  .legend-item{display:flex;align-items:center;gap:.4rem;font-size:.75rem;color:var(--slate);}
+  .legend-badge{font-family:'IBM Plex Mono',monospace;font-size:.64rem;font-weight:600;padding:.15rem .45rem;border-radius:2px;}
+
+  /* CTA LINK TO PUBLICATIONS */
+  .crosslink{display:flex;align-items:center;justify-content:space-between;background:var(--navy-light);border:1px solid #c8d3e3;border-radius:4px;padding:1rem 1.3rem;margin-bottom:2.5rem;text-decoration:none;transition:background .15s;}
+  .crosslink:hover{background:#d8e3f0;}
+  .crosslink-label{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem;}
+  .crosslink-title{font-size:.95rem;font-weight:600;color:var(--navy);}
+  .crosslink-arrow{font-size:1.2rem;color:var(--navy-mid);}
+
+  /* FOOTER */
+  footer{background:var(--navy);color:rgba(255,255,255,.55);text-align:center;padding:2rem;font-size:.78rem;margin-top:2rem;}
+  footer a{color:rgba(255,255,255,.75);text-decoration:none;}
+  footer a:hover{color:#fff;}
+  .foot-nav{display:flex;justify-content:center;gap:1.5rem;margin-bottom:.8rem;flex-wrap:wrap;}
+
+  /* ── MOBILE ──────────────────────────────── */
+  @media(max-width:640px){
+    /* Nav — hamburger handles layout */
+    nav{padding:0 1.2rem;}
+    .hamburger{display:flex;}
+    .nav-links{
+      display:none;position:absolute;top:56px;left:0;right:0;
+      background:var(--white);border-bottom:2px solid var(--border);
+      flex-direction:column;align-items:stretch;padding:.5rem 0;
+      box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:199;
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{height:auto;padding:.85rem 1.5rem;border-bottom:none;border-left:3px solid transparent;font-size:.85rem;letter-spacing:.02em;}
+    .nav-links a:hover,.nav-links a.active{border-left-color:var(--gold);border-bottom:none;background:var(--navy-light);}
+    .page-header{padding:1.6rem 1.2rem 1.4rem;}
+    .page-title{font-size:1.6rem;}
+    .page-intro{font-size:.83rem;}
+    .main{padding:1.8rem 1.2rem;}
+    .stats-row{grid-template-columns:1fr 1fr;gap:.7rem;}
+    .stat-num{font-size:1.5rem;}
+    .stat-label{font-size:.7rem;}
+    .funding-item{grid-template-columns:1fr;gap:.35rem;padding:.8rem .9rem;}
+    .funding-role{display:inline-block;margin-bottom:.15rem;}
+    .funding-title{font-size:.83rem;}
+    .funding-meta{font-size:.72rem;}
+    .crosslink{flex-direction:column;gap:.4rem;}
+    .foot-nav{gap:.8rem;}
+  }
+  @media(max-width:380px){
+    .nav-links a{padding:0 .35rem;font-size:.64rem;}
+    .stats-row{grid-template-columns:1fr 1fr;}
+    .page-title{font-size:1.35rem;}
+  }
+</style>
 </head>
 <body>
-  
-  <section data-bs-version="5.1" class="menu menu1 cid-uW0FNqZyXd" once="menu" id="menu1-24">
-    
 
-    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
-        <div class="container">
-            <div class="navbar-brand">
-                
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="index.html">Dongxiao Zhu</a></span>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#header11-6">Home</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="research.html">&nbsp; &nbsp;Research</a></li>
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="publications.html">&nbsp; Publication&nbsp;&nbsp;</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="funding.html">Funding&nbsp;&nbsp;</a></li>
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="teaching.html">Teaching</a>
-                    </li></ul>
-                
-                
-            </div>
-        </div>
-    </nav>
-</section>
+<nav>
+  <a class="nav-brand" href="index.html">Dongxiao Zhu</a>
+  <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="funding.html" class="active">Funding</a>
+    <a href="teaching.html">Teaching</a>
+  </div>
+</nav>
 
-<section data-bs-version="5.1" class="content9 cid-uW0FNrO4FC" id="content9-2a">
-    
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">Research Support — Entire Period</div>
+    <h1 class="page-title">Research Funding</h1>
+    <p class="page-intro">Selected federal grants and awards supporting foundational and use-inspired AI research at Wayne State University. Total funding ~$12M; as Principal Investigator ~$9M.</p>
+  </div>
+</div>
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="counter-container col-md-12 col-lg-12">
-                <h4 class="mbr-section-title mbr-fonts-style mb-4 display-5"><strong>Selected Federal Funding (Total ~8 Million, As PI, ~ 5 Million)</strong></h4>
-                <div class="mbr-text mbr-fonts-style display-7">
-                    <ol><li><strong style="font-size: 1.2rem;">NIH/R61EY037504: </strong><span style="font-size: 1.2rem;">VisionWay: Accessibility-aware Path Selection for Wayfinding,</span><strong style="font-size: 1.2rem;"> </strong><span style="font-size: 1.2rem;">09/01/2025-08/31/2027. </span><strong style="font-size: 1.2rem;">Role: MPI, </strong><span style="font-size: 1.2rem;">$1,235,002, 25%. 
-</span></li><li><strong style="font-size: 1.2rem;">NSF/IIS 2504264 </strong><span style="font-size: 1.2rem;">Collaborative Research: III: Medium: Advancing Large Language Model Unlearning: Foundations and Applications, 10/01/2025 - 09/30/2029, Total amount: $800,000, <strong>Role PI</strong> (33%).&nbsp;</span><br></li><li><strong style="font-size: 1.2rem;">NIH/R33HD105610: </strong><span style="font-size: 1.2rem;"><a href="https://reporter.nih.gov/search/36NiNjad1UOcKxBGGwj_zg/projects" class="text-primary">Severity Predictors Integrating salivary Transcriptomics and proteomics with Multi neural network Intelligence in SARS-CoV2 infection in Children (SPITS MISC)</a>, 01/01/2023-12/31/2025. </span><strong style="font-size: 1.2rem;">Role: MPI</strong><span style="font-size: 1.2rem;">, $1,449,684, 33%.</span><br></li><li><strong style="font-size: 1.2rem;">NSF/ITE </strong><span style="font-size: 1.2rem;"><strong>2235225:</strong> <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2235225&HistoricalAwards=false" class="text-primary">NSF Convergence Accelerator Track H: Leveraging Human-Centered AI Microtransit to Ameliorate Spatiotemporal Mismatch between Housing and Employment for Persons with Disabilities</a>. 12/15/2022 - 11/30/2024, Total amount: $613,621,&nbsp;<strong>Role: PI</strong> (25%)</span></li><li><strong style="font-size: 1.2rem;">NSF/IIS 2211897: </strong><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2211897&HistoricalAwards=false" class="text-primary" style="font-size: 1.2rem; background-color: rgb(255, 255, 255);">Collaborative Research: HCC: Small: Understanding Online-to-Offline Sexual Violence through Data Donation from Users</a><span style="font-size: 1.2rem;">. 10/01/2022-09/30/2026, Total amount: $600,000, </span><strong style="font-size: 1.2rem;">Role: PI</strong><span style="font-size: 1.2rem;"> (33%).&nbsp;</span><br></li><li><strong>NIH/R61HD105610</strong>: <a href="https://reporter.nih.gov/search/36NiNjad1UOcKxBGGwj_zg/projects" class="text-primary">Severity Predictors Integrating salivary Transcriptomics and proteomics with Multi neural network Intelligence in SARS-CoV2 infection in Children (SPITS MISC)</a>, 01/01/2021-12/31/2023. <strong>Role:</strong>&nbsp;<strong>MPI</strong>, $1,433,469, 33%.&nbsp;</li><li><strong>NSF/CNS 2043611</strong>: <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2043611&HistoricalAwards=false" class="text-primary">SCC-CIVIC-PG Track A: Leveraging AI-assist Microtransit to Ameliorate Spatiotemporal Mismatch between Housing and Employment</a>. 01/01/2021-06/30/2021. <strong>Role:</strong>&nbsp;<strong>PI, </strong>$49,892, 25%.</li><li><strong>NSF/CCF 1637312</strong>: <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1637312" class="text-primary">S&amp;CC: Promoting a Healthier Urban Community: Prioritization of Risk Factors for the Prevention and Treatment of Pediatric Obesity</a>. 09/01/2016-08/31/2018. <strong>Role: Co-PI</strong>, $199,996, 33%.</li><li><strong>NSF/IIS 1724227</strong>: <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1724227&HistoricalAwards=false" class="text-primary">S&amp;AS: INT: Autonomous Battery Operating System (ABOS): An Adaptive and Comprehensive Approach to Efficient, Safe, and Secure Battery System Management</a>. 09/01/2017-08/31/2021. <strong>Role:</strong>&nbsp;<strong>Senior Personnel</strong>, $1,249,998, 10%.</li><li><strong>NSF/CCF 1451316</strong>: <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1451316&ActiveAwards=true&ExpiredAwards=true" class="text-primary">EAGER: A novel algorithmic framework for discovering subnetworks from big biological data</a>. 08/15/2014-08/14/2017. <strong>Role: PI</strong>, $174,998, 100%.</li><li><strong>NIH/R21LM010137</strong>: <a href="https://reporter.nih.gov/project-details/8386753" class="text-primary">A new informatics paradigm for reconstructing signaling pathways in human disease</a>. 09/2009 – 08/2012. <strong>Role: Sole PI</strong>, $499,823, 100%.</li><li><strong>NSF/CCF 0939108</strong>: <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0939108" class="text-primary">CPATH: A verification based learning model that enriches CS and related undergraduate programs</a>. 10/01/2009-09/30/2012, <strong>Role: Co-PI</strong>, $300,000, 25%.</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
+<div class="main">
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-num">~$12M</div>
+      <div class="stat-label">Total research funding (entire period)</div>
     </div>
-</section>
-
-<section data-bs-version="5.1" class="content9 cid-uW0FNrTr0H" id="content9-2b">
-    
-
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="counter-container col-md-12 col-lg-12">
-                <h4 class="mbr-section-title mbr-fonts-style mb-4 display-5"><strong>Software</strong></h4>
-                <div class="mbr-text mbr-fonts-style display-7">
-                    <ol><li><a href="http://bioconductor.org/packages/devel/bioc/html/CORREP.html" class="text-primary">CORREP</a>: a Bioconductor package to estimate correlation between two variables with replicates.
-</li><li><a href="http://cran.r-project.org/src/contrib/Archive/GeneNT/" class="text-primary">GeneNT</a>: a R package to estimate co-expression gene networks.
-</li><li><a href="http://sammate.sourceforge.net/" class="text-primary">SAMMate</a>: a GUI system for transcriptome assembly and quantification using RNA-Seq (<strong>A popular software</strong> in its field: <strong>7000+ downloads</strong>, used by researchers from <strong>all over the world</strong> and <strong>cited by</strong> papers published in <strong>Nature Genetics, PNAS, Genome Research</strong> etc.)
-</li><li><a href="http://code.google.com/p/teak/" class="text-primary">TEAK</a>: a GUI system for Topological Enrichment Analysis frameworK.
-</li><li><a href="http://dsplicetype.sourceforge.net/" class="text-primary">dSpliceType</a>: a Java-based tool to detect various types of differential splicing events using RNA-Seq.</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
+    <div class="stat-card">
+      <div class="stat-num">~$9M</div>
+      <div class="stat-label">As Principal or Multi-PI Investigator</div>
     </div>
-</section>
-
-<section data-bs-version="5.1" class="footer3 cid-uW0FNrZkaj" once="footers" id="footer3-2c">
-
-    
-
-    <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(255, 255, 255);"></div>
-
-    <div class="container">
-        <div class="media-container-row align-center mbr-white">
-            <div class="row row-links">
-                <ul class="foot-menu">
-                    
-                    
-                    
-                    
-                    
-                <li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html" class="text-success">Home</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="publications.html" class="text-success text-primary">Research</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="teaching.html" class="text-success text-primary">Publication</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="students.html" class="text-success text-primary">Teaching</a></li></ul>
-            </div>
-            
-            <div class="row row-copirayt">
-                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
-                    © Copyright 2021- 2025 Dongxiao Zhu. All Rights Reserved.
-                </p>
-            </div>
-        </div>
+    <div class="stat-card">
+      <div class="stat-num">14</div>
+      <div class="stat-label">Federal grants from NSF, NIH, HRSA &amp; NAIRR</div>
     </div>
-</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/2545557" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/drag-drop-website-builder.html">Drag and Drop Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>  
-  
-  
+  </div>
+
+  <!-- CROSS-LINK TO PUBLICATIONS -->
+  <a class="crosslink" href="publications.html">
+    <div>
+      <div class="crosslink-label">See also</div>
+      <div class="crosslink-title">Publications — Preprints, Conference Papers &amp; Journal Articles →</div>
+    </div>
+    <span class="crosslink-arrow">→</span>
+  </a>
+
+  <!-- ROLE LEGEND -->
+  <div class="legend">
+    <div class="legend-item"><span class="legend-badge role-pi">Sole PI / MPI / PI</span> Principal Investigator</div>
+    <div class="legend-item"><span class="legend-badge role-copi">Co-PI</span> Co-Principal Investigator</div>
+    <div class="legend-item"><span class="legend-badge role-coi">Co-I</span> Co-Investigator</div>
+    <div class="legend-item"><span class="legend-badge role-sp">Sr. Personnel</span> Senior Personnel</div>
+  </div>
+
+  <!-- FUNDING LIST -->
+  <section class="section">
+    <h2 class="section-title">Selected Federal Funding</h2>
+    <div class="funding-list">
+
+      <div class="funding-item">
+        <span class="funding-role role-pi">Sole PI</span>
+        <div>
+          <div class="funding-title"><a href="https://nairrpilot.org/projects/awarded?_requestNumber=NAIRR260014" target="_blank">NAIRR/NSF: Aligning Large Reasoning Models via Safety-aware Post-Training</a></div>
+          <div class="funding-meta">2026 &nbsp;·&nbsp; $10,000 token credit &amp; 25,000 GPU hours &nbsp;·&nbsp; 100%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-pi">MPI</span>
+        <div>
+          <div class="funding-title"><a href="https://reporter.nih.gov/search/K3RY7leNekmjAHVsBdD9sg/projects" target="_blank">NIH/R61/R33EY037504: VisionWay — Accessibility-aware Path Selection for Wayfinding</a></div>
+          <div class="funding-meta">09/01/2025 – 08/31/2030 &nbsp;·&nbsp; $2,700,000 &nbsp;·&nbsp; 25%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-pi">PI</span>
+        <div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/show-award?AWD_ID=2504264" target="_blank">NSF/IIS 2504264: Collaborative Research: III: Medium: Advancing Large Language Model Unlearning — Foundations and Applications</a></div>
+          <div class="funding-meta">10/01/2025 – 09/30/2029 &nbsp;·&nbsp; $800,000 &nbsp;·&nbsp; 33%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-coi">Co-I</span>
+        <div>
+          <div class="funding-title"><a href="https://www.hrsa.gov/grants/find-funding/HRSA-24-018" target="_blank">HRSA/5U1QHP53070-02-00: A.G.R.E.E.D. — Applied Gerontology Research and Education to Eliminate Disparities (GWEP)</a></div>
+          <div class="funding-meta">07/01/2024 – 06/30/2029 &nbsp;·&nbsp; $3,000,000 &nbsp;·&nbsp; 10%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-pi">MPI</span>
+        <div>
+          <div class="funding-title"><a href="https://reporter.nih.gov/search/36NiNjad1UOcKxBGGwj_zg/projects" target="_blank">NIH/R33HD105610: SPITS-MISC — Severity Predictors Integrating salivary Transcriptomics and proteomics with Multi Neural Network Intelligence in SARS-CoV2 in Children</a></div>
+          <div class="funding-meta">01/01/2023 – 12/31/2025 &nbsp;·&nbsp; $1,449,684 &nbsp;·&nbsp; 33%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-pi">PI</span>
+        <div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2235225&HistoricalAwards=false" target="_blank">NSF/ITE 2235225: Convergence Accelerator Track H — Leveraging Human-Centered AI Microtransit to Ameliorate Spatiotemporal Mismatch between Housing and Employment for Persons with Disabilities</a></div>
+          <div class="funding-meta">12/15/2022 – 11/30/2024 &nbsp;·&nbsp; $613,621 &nbsp;·&nbsp; 25%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-pi">PI</span>
+        <div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2211897&HistoricalAwards=false" target="_blank">NSF/IIS 2211897: Collaborative Research HCC: Small: Understanding Online-to-Offline Sexual Violence through Data Donation from Users</a></div>
+          <div class="funding-meta">10/01/2022 – 09/30/2026 &nbsp;·&nbsp; $600,000 &nbsp;·&nbsp; 33%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-pi">MPI</span>
+        <div>
+          <div class="funding-title"><a href="https://reporter.nih.gov/search/36NiNjad1UOcKxBGGwj_zg/projects" target="_blank">NIH/R61HD105610: SPITS-MISC (Phase I) — Severity Predictors Integrating salivary Transcriptomics with Multi Neural Network Intelligence in SARS-CoV2 in Children</a></div>
+          <div class="funding-meta">01/01/2021 – 12/31/2024 &nbsp;·&nbsp; $1,433,469 &nbsp;·&nbsp; 33%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-pi">PI</span>
+        <div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2043611&HistoricalAwards=false" target="_blank">NSF/CNS 2043611: SCC-CIVIC-PG Track A — Leveraging AI-assist Microtransit to Ameliorate Spatiotemporal Mismatch between Housing and Employment</a></div>
+          <div class="funding-meta">01/01/2021 – 06/30/2021 &nbsp;·&nbsp; $49,892 &nbsp;·&nbsp; 25%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-copi">Co-PI</span>
+        <div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1637312" target="_blank">NSF/CCF 1637312: S&amp;CC — Promoting a Healthier Urban Community: Prioritization of Risk Factors for the Prevention and Treatment of Pediatric Obesity</a></div>
+          <div class="funding-meta">09/01/2016 – 08/31/2018 &nbsp;·&nbsp; $199,996 &nbsp;·&nbsp; 33%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-sp">Sr. Personnel</span>
+        <div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1724227&HistoricalAwards=false" target="_blank">NSF/IIS 1724227: S&amp;AS: INT — Autonomous Battery Operating System (ABOS): Efficient, Safe, and Secure Battery System Management</a></div>
+          <div class="funding-meta">09/01/2017 – 08/31/2021 &nbsp;·&nbsp; $1,249,998 &nbsp;·&nbsp; 10%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-pi">PI</span>
+        <div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1451316&ActiveAwards=true&ExpiredAwards=true" target="_blank">NSF/CCF 1451316: EAGER — A Novel Algorithmic Framework for Discovering Subnetworks from Big Biological Data</a></div>
+          <div class="funding-meta">08/15/2014 – 08/14/2017 &nbsp;·&nbsp; $174,998 &nbsp;·&nbsp; 100%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-pi">Sole PI</span>
+        <div>
+          <div class="funding-title"><a href="https://reporter.nih.gov/project-details/8386753" target="_blank">NIH/R21LM010137: A New Informatics Paradigm for Reconstructing Signaling Pathways in Human Disease</a></div>
+          <div class="funding-meta">09/2009 – 08/2012 &nbsp;·&nbsp; $499,823 &nbsp;·&nbsp; 100%</div>
+        </div>
+      </div>
+
+      <div class="funding-item">
+        <span class="funding-role role-copi">Co-PI</span>
+        <div>
+          <div class="funding-title"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0939108" target="_blank">NSF/CCF 0939108: CPATH — A Verification Based Learning Model that Enriches CS and Related Undergraduate Programs</a></div>
+          <div class="funding-meta">10/01/2009 – 09/30/2012 &nbsp;·&nbsp; $300,000 &nbsp;·&nbsp; 25%</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="foot-nav">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="funding.html">Funding</a>
+    <a href="teaching.html">Teaching</a>
+  </div>
+  <div>© 2021–2026 Dongxiao Zhu · Wayne State University · Detroit, MI</div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.querySelector('.hamburger');
+  var menu = document.querySelector('.nav-links');
+  if(!btn||!menu) return;
+  btn.addEventListener('click', function(){
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+  });
+  document.addEventListener('click', function(e){
+    if(!btn.contains(e.target) && !menu.contains(e.target)){
+      btn.classList.remove('open');
+      menu.classList.remove('open');
+    }
+  });
+})();
+</script>
 </body>
 </html>

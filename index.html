@@ -82,6 +82,7 @@
   }
   .hero-photo {
     width: 100%;
+    max-width: 220px;
     aspect-ratio: 2/3;
     object-fit: cover;
     object-position: top;
@@ -267,61 +268,28 @@
 
   /* ── MOBILE ─────────────────────────────────────── */
   @media (max-width: 700px) {
-
-    /* Nav: shrink padding, allow brand to breathe */
-    nav { padding: 0 1rem; }
-    .nav-brand { font-size: 0.95rem; }
-    .nav-links a {
-      padding: 0 0.65rem;
-      font-size: 0.72rem;
-      letter-spacing: 0.02em;
-    }
-
     /* Hero: stack photo above text, center everything */
-    .hero { padding: 2rem 1.2rem 2rem; }
-    .hero-inner {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      text-align: center;
-    }
-    .hero-photo {
-      width: 140px;
-      aspect-ratio: 1/1;
-      border-radius: 50%;
-      margin: 0 auto;
-      display: block;
-    }
+    .hero { padding: 2rem 1.2rem; }
+    .hero-inner { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+    .hero-photo { max-width: 140px; aspect-ratio: 1/1; border-radius: 50%; margin: 0 auto; display: block; }
     .hero-name { font-size: 2rem; }
-    .hero-title { font-size: 0.78rem; }
+    .hero-title { font-size: .78rem; }
     .hero-links { justify-content: center; }
     .hero-tags { justify-content: center; }
-    .hero-affil { font-size: 0.85rem; }
-
-    /* Main content padding */
+    .hero-affil { font-size: .85rem; }
+    /* Main */
     .main { padding: 2rem 1.2rem; }
-
-    /* Role cards: stack to single column */
-    .role-grid { grid-template-columns: 1fr; gap: 0.7rem; }
-
+    /* Role cards */
+    .role-grid { grid-template-columns: 1fr; gap: .7rem; }
     /* Section titles */
     .section-title { font-size: 1.3rem; }
-
-    /* News: remove date column, stack vertically */
-    .news-item {
-      grid-template-columns: 1fr;
-      gap: 0.3rem;
-      padding: 0.9rem 0;
-    }
-    .news-date {
-      font-size: 0.68rem;
-      margin-bottom: 0.1rem;
-    }
-    .news-text { font-size: 0.84rem; }
-
-    /* Show more button: full width on mobile */
-    .show-more-btn { width: 100%; text-align: center; padding: 0.7rem; }
-
-    /* Footer nav: wrap tightly */
+    /* News */
+    .news-item { grid-template-columns: 1fr; gap: .3rem; padding: .9rem 0; }
+    .news-date { font-size: .68rem; margin-bottom: .1rem; }
+    .news-text { font-size: .84rem; }
+    /* Show more button */
+    .show-more-btn { width: 100%; text-align: center; padding: .7rem; }
+    /* Footer */
     .foot-nav { gap: 1rem; flex-wrap: wrap; }
   }
 
@@ -337,10 +305,14 @@
 
 <nav>
   <a class="nav-brand" href="index.html">Dongxiao Zhu</a>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-links">
     <a href="index.html" class="active">Home</a>
     <a href="research.html">Research</a>
     <a href="publications.html">Publications</a>
+    <a href="funding.html">Funding</a>
     <a href="teaching.html">Teaching</a>
   </div>
 </nav>
@@ -511,6 +483,7 @@
     <a href="index.html">Home</a>
     <a href="research.html">Research</a>
     <a href="publications.html">Publications</a>
+    <a href="funding.html">Funding</a>
     <a href="teaching.html">Teaching</a>
   </div>
   <div>© 2021–2026 Dongxiao Zhu · Wayne State University · Detroit, MI</div>
@@ -523,6 +496,23 @@ function toggleNews(btn) {
   hidden.forEach(el => el.style.display = isHidden ? 'grid' : 'none');
   btn.textContent = isHidden ? 'Show less ↑' : 'Show more news ↓';
 }
+</script>
+<script>
+(function(){
+  var btn = document.querySelector('.hamburger');
+  var menu = document.querySelector('.nav-links');
+  if(!btn||!menu) return;
+  btn.addEventListener('click', function(){
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+  });
+  document.addEventListener('click', function(e){
+    if(!btn.contains(e.target) && !menu.contains(e.target)){
+      btn.classList.remove('open');
+      menu.classList.remove('open');
+    }
+  });
+})();
 </script>
 </body>
 </html>

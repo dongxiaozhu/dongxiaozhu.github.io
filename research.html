@@ -103,11 +103,18 @@
 
   /* ── MOBILE ─────────────────────────────────────── */
   @media (max-width: 700px) {
-
-    /* Nav */
-    nav { padding: 0 1rem; }
-    .nav-brand { font-size: 0.95rem; }
-    .nav-links a { padding: 0 0.6rem; font-size: 0.72rem; letter-spacing: 0.02em; }
+    /* Nav — hamburger handles layout */
+    nav{padding:0 1.2rem;}
+    .hamburger{display:flex;}
+    .nav-links{
+      display:none;position:absolute;top:56px;left:0;right:0;
+      background:var(--white);border-bottom:2px solid var(--border);
+      flex-direction:column;align-items:stretch;padding:.5rem 0;
+      box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:199;
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{height:auto;padding:.85rem 1.5rem;border-bottom:none;border-left:3px solid transparent;font-size:.85rem;letter-spacing:.02em;}
+    .nav-links a:hover,.nav-links a.active{border-left-color:var(--gold);border-bottom:none;background:var(--navy-light);}
 
     /* Page header */
     .page-header { padding: 1.6rem 1.2rem 1.4rem; }
@@ -157,10 +164,14 @@
 
 <nav>
   <a class="nav-brand" href="index.html">Dongxiao Zhu</a>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="research.html" class="active">Research</a>
     <a href="publications.html">Publications</a>
+    <a href="funding.html">Funding</a>
     <a href="teaching.html">Teaching</a>
   </div>
 </nav>
@@ -384,10 +395,28 @@
     <a href="index.html">Home</a>
     <a href="research.html">Research</a>
     <a href="publications.html">Publications</a>
+    <a href="funding.html">Funding</a>
     <a href="teaching.html">Teaching</a>
   </div>
   <div>© 2021–2026 Dongxiao Zhu · Wayne State University · Detroit, MI</div>
 </footer>
 
+<script>
+(function(){
+  var btn = document.querySelector('.hamburger');
+  var menu = document.querySelector('.nav-links');
+  if(!btn||!menu) return;
+  btn.addEventListener('click', function(){
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+  });
+  document.addEventListener('click', function(e){
+    if(!btn.contains(e.target) && !menu.contains(e.target)){
+      btn.classList.remove('open');
+      menu.classList.remove('open');
+    }
+  });
+})();
+</script>
 </body>
 </html>
