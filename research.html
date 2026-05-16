@@ -22,6 +22,7 @@
     position: sticky; top: 0; z-index: 100;
     background: var(--white); border-bottom: 1px solid var(--border);
     padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px;
+    position:relative;
   }
   .nav-brand { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); text-decoration: none; }
   .nav-links { display: flex; gap: 0; }
@@ -103,18 +104,6 @@
 
   /* ── MOBILE ─────────────────────────────────────── */
   @media (max-width: 700px) {
-    /* Nav — hamburger handles layout */
-    nav{padding:0 1.2rem;}
-    .hamburger{display:flex;}
-    .nav-links{
-      display:none;position:absolute;top:56px;left:0;right:0;
-      background:var(--white);border-bottom:2px solid var(--border);
-      flex-direction:column;align-items:stretch;padding:.5rem 0;
-      box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:199;
-    }
-    .nav-links.open{display:flex;}
-    .nav-links a{height:auto;padding:.85rem 1.5rem;border-bottom:none;border-left:3px solid transparent;font-size:.85rem;letter-spacing:.02em;}
-    .nav-links a:hover,.nav-links a.active{border-left-color:var(--gold);border-bottom:none;background:var(--navy-light);}
 
     /* Page header */
     .page-header { padding: 1.6rem 1.2rem 1.4rem; }
@@ -157,6 +146,33 @@
     .page-title { font-size: 1.35rem; }
     .area-title { font-size: 1.05rem; }
     .paper-card { padding: 0.75rem 0.85rem; }
+  }
+
+  /* ── HAMBURGER NAV ──────────────────────────────── */
+  .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;width:40px;height:40px;flex-shrink:0;}
+  .hamburger span{display:block;height:2px;width:24px;background:var(--navy);border-radius:2px;transition:transform .25s, opacity .2s;}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media(max-width:700px){
+    .hamburger{display:flex;}
+    .nav-links{
+      display:none;position:absolute;top:56px;left:0;right:0;z-index:199;
+      background:var(--white);border-bottom:2px solid var(--gold);
+      flex-direction:column;align-items:stretch;padding:.4rem 0;
+      box-shadow:0 6px 20px rgba(0,0,0,.1);
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{
+      height:auto;padding:.9rem 1.5rem;
+      border-bottom:1px solid var(--border);border-left:3px solid transparent;
+      font-size:.85rem;letter-spacing:.02em;white-space:nowrap;
+    }
+    .nav-links a:last-child{border-bottom:none;}
+    .nav-links a:hover,.nav-links a.active{
+      border-bottom:1px solid var(--border);border-left:3px solid var(--gold);
+      background:var(--navy-light);color:var(--navy);
+    }
   }
 </style>
 </head>
@@ -401,21 +417,18 @@
   <div>© 2021–2026 Dongxiao Zhu · Wayne State University · Detroit, MI</div>
 </footer>
 
+
 <script>
 (function(){
   var btn = document.querySelector('.hamburger');
   var menu = document.querySelector('.nav-links');
   if(!btn||!menu) return;
-  btn.addEventListener('click', function(){
-    btn.classList.toggle('open');
-    menu.classList.toggle('open');
-  });
-  document.addEventListener('click', function(e){
-    if(!btn.contains(e.target) && !menu.contains(e.target)){
-      btn.classList.remove('open');
-      menu.classList.remove('open');
-    }
-  });
+  function close(){ btn.classList.remove('open'); menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  function open(){ btn.classList.add('open'); menu.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  btn.addEventListener('click', function(e){ e.stopPropagation(); btn.classList.contains('open') ? close() : open(); });
+  document.addEventListener('click', function(e){ if(!btn.contains(e.target)&&!menu.contains(e.target)) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
 })();
 </script>
 </body>
