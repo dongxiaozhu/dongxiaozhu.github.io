@@ -100,6 +100,57 @@
   footer a { color: rgba(255,255,255,0.75); text-decoration: none; }
   footer a:hover { color: #fff; }
   .foot-nav { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.8rem; }
+
+  /* ── MOBILE ─────────────────────────────────────── */
+  @media (max-width: 700px) {
+
+    /* Nav */
+    nav { padding: 0 1rem; }
+    .nav-brand { font-size: 0.95rem; }
+    .nav-links a { padding: 0 0.6rem; font-size: 0.72rem; letter-spacing: 0.02em; }
+
+    /* Page header */
+    .page-header { padding: 1.6rem 1.2rem 1.4rem; }
+    .page-title { font-size: 1.6rem; }
+    .page-intro { font-size: 0.85rem; }
+
+    /* Main content */
+    .main { padding: 2rem 1.2rem; }
+
+    /* Area header: stack number and title */
+    .area-header { flex-direction: column; gap: 0.2rem; padding-left: 0.8rem; margin-bottom: 1rem; }
+    .area-num { font-size: 0.7rem; }
+    .area-title { font-size: 1.15rem; }
+    .area-desc { font-size: 0.84rem; line-height: 1.75; margin-bottom: 1.2rem; }
+
+    /* Paper cards: stack venue tag above title */
+    .paper-card {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+      padding: 0.9rem 1rem;
+    }
+    .paper-venue {
+      display: inline-block;
+      font-size: 0.66rem;
+      margin-bottom: 0.2rem;
+    }
+    .paper-title { font-size: 0.84rem; }
+    .paper-authors { font-size: 0.76rem; }
+
+    /* Divider spacing */
+    .area-divider { margin: 0 0 2.5rem; }
+
+    /* Footer */
+    .foot-nav { gap: 1rem; flex-wrap: wrap; }
+  }
+
+  /* ── SMALL PHONES (≤380px) ───────────────────────── */
+  @media (max-width: 380px) {
+    .nav-links a { padding: 0 0.4rem; font-size: 0.66rem; }
+    .page-title { font-size: 1.35rem; }
+    .area-title { font-size: 1.05rem; }
+    .paper-card { padding: 0.75rem 0.85rem; }
+  }
 </style>
 </head>
 <body>

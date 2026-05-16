@@ -265,12 +265,71 @@
   footer a:hover { color: var(--white); }
   .foot-nav { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.8rem; }
 
+  /* ── MOBILE ─────────────────────────────────────── */
   @media (max-width: 700px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-photo { width: 140px; }
-    .role-grid { grid-template-columns: 1fr; }
-    .news-item { grid-template-columns: 1fr; }
-    .news-date { margin-bottom: -0.3rem; }
+
+    /* Nav: shrink padding, allow brand to breathe */
+    nav { padding: 0 1rem; }
+    .nav-brand { font-size: 0.95rem; }
+    .nav-links a {
+      padding: 0 0.65rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* Hero: stack photo above text, center everything */
+    .hero { padding: 2rem 1.2rem 2rem; }
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      text-align: center;
+    }
+    .hero-photo {
+      width: 140px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: block;
+    }
+    .hero-name { font-size: 2rem; }
+    .hero-title { font-size: 0.78rem; }
+    .hero-links { justify-content: center; }
+    .hero-tags { justify-content: center; }
+    .hero-affil { font-size: 0.85rem; }
+
+    /* Main content padding */
+    .main { padding: 2rem 1.2rem; }
+
+    /* Role cards: stack to single column */
+    .role-grid { grid-template-columns: 1fr; gap: 0.7rem; }
+
+    /* Section titles */
+    .section-title { font-size: 1.3rem; }
+
+    /* News: remove date column, stack vertically */
+    .news-item {
+      grid-template-columns: 1fr;
+      gap: 0.3rem;
+      padding: 0.9rem 0;
+    }
+    .news-date {
+      font-size: 0.68rem;
+      margin-bottom: 0.1rem;
+    }
+    .news-text { font-size: 0.84rem; }
+
+    /* Show more button: full width on mobile */
+    .show-more-btn { width: 100%; text-align: center; padding: 0.7rem; }
+
+    /* Footer nav: wrap tightly */
+    .foot-nav { gap: 1rem; flex-wrap: wrap; }
+  }
+
+  /* ── SMALL PHONES (≤380px) ───────────────────────── */
+  @media (max-width: 380px) {
+    .nav-links a { padding: 0 0.45rem; font-size: 0.68rem; }
+    .hero-name { font-size: 1.75rem; }
+    .hero-photo { width: 110px; }
   }
 </style>
 </head>

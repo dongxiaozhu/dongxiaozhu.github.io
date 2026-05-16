@@ -75,11 +75,60 @@
   footer a{color:rgba(255,255,255,.75);text-decoration:none;}
   footer a:hover{color:#fff;}
   .foot-nav{display:flex;justify-content:center;gap:1.5rem;margin-bottom:.8rem;}
+
+  /* ── MOBILE ─────────────────────────────────────── */
   @media(max-width:640px){
+
+    /* Nav */
+    nav{padding:0 1rem;}
+    .nav-brand{font-size:.95rem;}
+    .nav-links a{padding:0 .6rem;font-size:.72rem;letter-spacing:.02em;}
+
+    /* Page header */
+    .page-header{padding:1.6rem 1.2rem 1.4rem;}
+    .page-title{font-size:1.6rem;}
+    .page-intro{font-size:.82rem;}
+
+    /* Main */
+    .main{padding:1.8rem 1.2rem;}
+
+    /* Stats: 2-up on mobile */
+    .stats-row{grid-template-columns:1fr 1fr;gap:.6rem;}
+    .stat-num{font-size:1.5rem;}
+    .stat-label{font-size:.7rem;}
+
+    /* Jump nav: wrap naturally, smaller text */
+    .jump-nav{gap:.35rem;margin-bottom:1.8rem;}
+    .jump-link{font-size:.7rem;padding:.2rem .55rem;}
+
+    /* Section title */
+    .section-title{font-size:1.15rem;}
+
+    /* Funding: stack role badge above title */
+    .funding-item{grid-template-columns:1fr;gap:.4rem;padding:.8rem .9rem;}
+    .funding-role{display:inline-block;margin-bottom:.2rem;}
+    .funding-title{font-size:.83rem;}
+    .funding-meta{font-size:.72rem;}
+
+    /* Pub items: stack tag above content */
+    .pub-item{grid-template-columns:1fr;gap:.3rem;padding:.7rem 0;}
+    .pub-tag{display:inline-block;margin-bottom:.25rem;}
+    .pub-title{font-size:.84rem;}
+    .pub-authors{font-size:.76rem;}
+
+    /* Pub group title */
+    .pub-group-title{font-size:.68rem;}
+
+    /* Footer */
+    .foot-nav{gap:.8rem;flex-wrap:wrap;}
+  }
+
+  /* ── SMALL PHONES (≤380px) ───────────────────────── */
+  @media(max-width:380px){
+    .nav-links a{padding:0 .4rem;font-size:.66rem;}
     .stats-row{grid-template-columns:1fr 1fr;}
-    .pub-item{grid-template-columns:1fr;}
-    .funding-item{grid-template-columns:1fr;}
-    .pub-tag{display:inline-block;margin-bottom:.3rem;}
+    .stat-num{font-size:1.3rem;}
+    .page-title{font-size:1.4rem;}
   }
 </style>
 </head>
