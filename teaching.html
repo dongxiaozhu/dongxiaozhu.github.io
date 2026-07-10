@@ -24,6 +24,7 @@
     padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px;
     position:relative;
   }
+  .nav-inner { max-width: 960px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between; height: 100%; }
   .nav-brand { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); text-decoration: none; }
   .nav-links { display: flex; }
   .nav-links a {
@@ -232,7 +233,7 @@
 </head>
 <body>
 
-<nav>
+<nav><div class="nav-inner">
   <a class="nav-brand" href="index.html">Dongxiao Zhu</a>
     <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -244,7 +245,7 @@
     <a href="funding.html">Funding</a>
     <a href="teaching.html" class="active">Teaching</a>
   </div>
-</nav>
+</div></nav>
 
 <div class="page-header">
   <div class="page-header-inner">

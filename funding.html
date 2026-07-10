@@ -14,8 +14,9 @@
   body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
 
   /* NAV */
-  nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;  position:relative;
+  nav {position:sticky;top:0;z-index:200;background:var(--white);border-bottom:1px solid var(--border);padding: 0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;  position:relative;
   }
+  .nav-inner { max-width: 960px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between; height: 100%; }
   .nav-brand{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--navy);text-decoration:none;flex-shrink:0;}
   .nav-links{display:flex;align-items:center;}
   .nav-links a{text-decoration:none;font-size:.82rem;font-weight:500;color:var(--slate);letter-spacing:.04em;text-transform:uppercase;padding:0 1rem;height:56px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
@@ -131,7 +132,7 @@
 </head>
 <body>
 
-<nav>
+<nav><div class="nav-inner">
   <a class="nav-brand" href="index.html">Dongxiao Zhu</a>
   <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -143,7 +144,7 @@
     <a href="funding.html" class="active">Funding</a>
     <a href="teaching.html">Teaching</a>
   </div>
-</nav>
+</div></nav>
 
 <div class="page-header">
   <div class="page-header-inner">
