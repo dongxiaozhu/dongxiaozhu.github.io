@@ -17,9 +17,8 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
-  nav {position:sticky;top:0;z-index:200;background:var(--white);border-bottom:1px solid var(--border);padding: 0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;  position:relative;
+  nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;  position:relative;
   }
-  .nav-inner { max-width: 960px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between; height: 100%; }
   .nav-brand{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--navy);text-decoration:none;flex-shrink:0;}
   .nav-links{display:flex;align-items:center;}
   .nav-links a{text-decoration:none;font-size:.82rem;font-weight:500;color:var(--slate);letter-spacing:.04em;text-transform:uppercase;padding:0 1rem;height:56px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
@@ -153,7 +152,7 @@
 </head>
 <body>
 
-<nav><div class="nav-inner">
+<nav>
   <a class="nav-brand" href="index.html">Dongxiao Zhu</a>
   <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -165,7 +164,7 @@
     <a href="funding.html">Funding</a>
     <a href="teaching.html">Teaching</a>
   </div>
-</div></nav>
+</nav>
 
 <div class="page-header">
   <div class="page-header-inner">
@@ -218,13 +217,6 @@
       <div class="pub-item">
         <span class="pub-tag pre">arXiv</span>
         <div>
-          <div class="pub-title"><a href="https://arxiv.org/pdf/2503.23534" target="_blank">BiPVL-Seg: Bidirectional Progressive Vision-Language Fusion with Global-Local Alignment for Medical Image Segmentation</a></div>
-          <div class="pub-authors">Sultan, R.I., Zhu, H., Li, C. and <strong>Zhu, D.</strong> — arXiv:2503.23534, 2025</div>
-        </div>
-      </div>
-      <div class="pub-item">
-        <span class="pub-tag pre">arXiv</span>
-        <div>
           <div class="pub-title"><a href="https://arxiv.org/abs/2402.13459" target="_blank">Learning to Poison Large Language Models During Instruction Tuning</a></div>
           <div class="pub-authors">Qiang, Y., Zhou, X., Zare Zade, S., Rosani, A., Zytko, D. and <strong>Zhu, D.</strong></div>
         </div>
@@ -237,8 +229,15 @@
     <h2 class="section-title">Foundational AI / Machine Learning Research <span>(student as first author)</span></h2>
 
     <div class="pub-group">
-      <div class="pub-group-title">2026 <span class="count">5</span></div>
+      <div class="pub-group-title">2026 <span class="count">6</span></div>
       <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-tag mid">BMVC-26</span>
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/pdf/2503.23534" target="_blank">BiPVL-Seg: Bidirectional Progressive Vision-Language Fusion with Global-Local Alignment for Medical Image Segmentation</a></div>
+            <div class="pub-authors">Sultan, R.I., Zhu, H., Li, C. and <strong>Zhu, D.</strong></div>
+          </div>
+        </div>
         <div class="pub-item">
           <span class="pub-tag top">CVPR-26</span>
           <div>
@@ -535,8 +534,22 @@
     <h2 class="section-title">Use-Inspired AI Research <span>(student as first author)</span></h2>
 
     <div class="pub-group">
-      <div class="pub-group-title">Health &amp; Medical Imaging <span class="count">13</span></div>
+      <div class="pub-group-title">Health &amp; Medical Imaging <span class="count">15</span></div>
       <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-tag jnl">Med. Physics</span>
+          <div>
+            <div class="pub-title">A Neighborhood Attention Transformer Network for Enhanced 3D Segmentation of the Left Anterior Descending Artery</div>
+            <div class="pub-authors">Sultan, R.I., Li, C., <strong>Zhu, D.</strong> and Thind, K.</div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <span class="pub-tag jnl">Med. Physics</span>
+          <div>
+            <div class="pub-title">Cross-Fraction Prior Learning for Scalable Organ-at-Risk Segmentation in Abdominal MR-Guided Radiotherapy</div>
+            <div class="pub-authors">Li, C., Rusu, D., Sultan, R.I., Bagher-Ebadian, H., Doemer, A., <strong>Zhu, D.</strong>, Parikh, P.J. and Thind, K.</div>
+          </div>
+        </div>
         <div class="pub-item">
           <span class="pub-tag mid">AIME-26</span>
           <div>
